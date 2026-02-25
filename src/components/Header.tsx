@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 interface HeaderProps {
   showNav?: boolean;
 }
 
 export default function Header({ showNav = false }: HeaderProps) {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
   const [dark, setDark] = useState<boolean>(
     document.documentElement.classList.contains("dark")
   );
@@ -73,15 +78,29 @@ export default function Header({ showNav = false }: HeaderProps) {
               {dark ? "☀️" : "🌙"}
             </button>
 
-            {/* Login - Secondary */}
-            <button className="px-5 py-2 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-400 shadow-md transition">              
-              Login
-            </button>
-
-            {/* Signup - Primary */}
-            <button className="px-5 py-2 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-400 shadow-md transition">
-              Sign Up
-            </button>
+            {isAuthenticated ? (
+              <button
+                onClick={() => navigate("/app/dashboard")}
+                className="px-5 py-2 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-400 shadow-md transition"
+              >
+                Open App
+              </button>
+            ) : (
+              <>
+                <button
+                  onClick={() => navigate("/login")}
+                  className="px-5 py-2 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                >
+                  Login
+                </button>
+                <button
+                  onClick={() => navigate("/signup")}
+                  className="px-5 py-2 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-400 shadow-md transition"
+                >
+                  Sign Up
+                </button>
+              </>
+            )}
 
           </div>
 

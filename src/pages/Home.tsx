@@ -34,9 +34,9 @@ export default function Home() {
         </RevealFade>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <SportCard name="Cricket" image="/images/card-cricket.jpg" />
-          <SportCard name="Football" image="/images/card-soccer.jpg" />
-          <SportCard name="Volleyball" image="/images/card-vollyball.jpg" />
+          <SportCard name="Cricket" image="/images/card-cricket.jpg" sportId="cricket" />
+          <SportCard name="Football" image="/images/card-soccer.jpg" sportId="football" />
+          <SportCard name="Volleyball" image="/images/card-vollyball.jpg" sportId="volleyball" />
         </div>
       </section>
 
