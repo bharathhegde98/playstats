@@ -5,32 +5,29 @@ import type { SportType } from "../../types/match";
 
 /* Headline text */
 const headlines: Record<SportType, string> = {
-  cricket: "Every innings tells a story. Make yours unforgettable.",
-  football: "Where passion meets the pitch and legends are born.",
-  volleyball: "Rise. Spike. Win. The game starts here.",
+	cricket: "Every innings tells a story. Make yours unforgettable.",
+	football: "Where passion meets the pitch and legends are born.",
+	volleyball: "Rise. Spike. Win. The game starts here.",
 };
 
 export default function SportHome() {
-  const { sportName } = useParams<{ sportName: SportType }>();
+	const { sportName } = useParams<{ sportName: SportType }>();
 
-  if (!sportName) {
-    return (
-      <div className="text-center py-20">
-        Sport not found
-      </div>
-    );
-  }
+	if (!sportName) {
+		return (
+			<div className="text-center py-20">
+				Sport not found
+			</div>
+		);
+	}
 
-  return (
-    <div>
-      <SportBanner
-        headline={headlines[sportName] || "Welcome to PlayStats"}
-        image={`/images/hero-${sportName}.jpg`}
-      />
+	return (
+		<div>
+			<SportBanner headline={headlines[sportName] || "Welcome to PlayStats"} image={`/images/hero-${sportName}.jpg`} />
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <SportTabs />
-      </div>
-    </div>
-  );
+			<div className="max-w-7xl mx-auto px-6 py-16">
+				<SportTabs />
+			</div>
+		</div>
+	);
 }

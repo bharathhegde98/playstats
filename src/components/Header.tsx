@@ -1,204 +1,141 @@
-import { useEffect, useRef, useState } from "react";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useParams } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function Header() {
-  const { isAuthenticated } = useAuth();
-  const navigate = useNavigate();
+	const { isAuthenticated } = useAuth();
+	const { sportName } = useParams<{ sportName: string }>();
 
-  const [dark, setDark] = useState<boolean>(
-    document.documentElement.classList.contains("dark")
-  );
-  const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+	const [dark, setDark] = useState<boolean>(
+		document.documentElement.classList.contains("dark")
+	);
+	const [mobileOpen, setMobileOpen] = useState<boolean>(false);
 
-  const drawerRef = useRef<HTMLDivElement | null>(null);
-  const { sportName } = useParams<{ sportName: string }>();
+	/* ================= THEME ================= */
 
-  /* ================= THEME ================= */
+	useEffect(() => {
+		setDark(document.documentElement.classList.contains("dark"));
+	}, []);
 
-  useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    setDark(isDark);
-  }, []);
+	const toggleTheme = () => {
+		const isDark = document.documentElement.classList.toggle("dark");
+		localStorage.setItem("theme", isDark ? "dark" : "light");
+		setDark(isDark);
+	};
 
-  const toggleTheme = (): void => {
-    const isDark = document.documentElement.classList.toggle("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    setDark(isDark);
-  };
+	const closeMobile = () => setMobileOpen(false);
 
-  /* ================= MOBILE ================= */
+	/* ================= LINKS ================= */
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMobileOpen(false);
-    };
+	const links = sportName
+		? [
+			{ label: "Live Matches", path: `/${sportName}/live` },
+			{ label: "Tournament Guide", path: `/${sportName}/guide` },
+			{ label: "Contact", path: "/contact" },
+		]
+		: [
+			{ label: "Cricket", path: "/cricket" },
+			{ label: "Volleyball", path: "/volleyball" },
+			{ label: "Football", path: "/football" },
+			{ label: "Contact", path: "/contact" },
+		];
 
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-      document.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.body.style.overflow = "auto";
-    }
+	return (
+		<header className="fixed top-0 left-0 w-full z-50 section-base border-b border-gray-200 dark:border-gray-800">
+			<div className="max-w-7xl mx-auto px-6">
+				<div className="h-16 flex items-center justify-between">
 
-    return () => {
-      document.body.style.overflow = "auto";
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [mobileOpen]);
+					{/* ================= LOGO ================= */}
+					<Link to="/" className="flex items-center gap-3" aria-label="Go to PlayStats homepage">
+						<img src="/playstats.png" alt="PlayStats logo" className="h-10" />
+						<span className="text-lg font-semibold text-dark"> Play
+							<span className="bg-brand-gradient bg-clip-text text-transparent">Stats</span>
+						</span>
+					</Link>
 
-  const closeMobile = () => setMobileOpen(false);
+					{/* ================= RIGHT SIDE ================= */}
+					<div className="flex items-center gap-6">
 
-  /* ================= LINKS ================= */
+						{/* Theme Toggle */}
+						<button onClick={toggleTheme} aria-label="Toggle dark mode" aria-pressed={dark} className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+							{dark ? "☀️" : "🌙"}
+						</button>
 
-  const links = sportName
-    ? [
-        { label: "Live Matches", path: `/${sportName}/live` },
-        { label: "Tournament Guide", path: `/${sportName}/guide` },
-        { label: "Contact", path: "/contact" },
-      ]
-    : [
-        { label: "Cricket", path: "/cricket" },
-        { label: "Volleyball", path: "/volleyball" },
-        { label: "Football", path: "/football" },
-        { label: "Contact", path: "/contact" },
-      ];
+						{/* Desktop Navigation */}
+						<nav className="hidden lg:block" aria-label="Primary Navigation">
+							<ul className="flex items-center gap-6 font-medium">
+								{links.map((link) => (
+									<li key={link.path}>
+										<NavLink to={link.path} className={({ isActive }) => isActive ? "text-emerald-500 font-semibold" : "hover:text-emerald-500 transition"}>
+											{link.label}
+										</NavLink>
+									</li>
+								))}
+							</ul>
+						</nav>
 
-  /* ================= UI ================= */
+						{/* Auth Section */}
+						<div className="hidden lg:flex items-center gap-3">
+							{isAuthenticated ? (
+								<Link to="/app/dashboard" className="px-5 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-400 transition">
+									Open App
+								</Link>
+							) : (
+								<>
+									<Link to="/login" className="px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-400 transition">
+										Login
+									</Link>
 
-  return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="h-16 flex items-center justify-between">
+									<Link to="/signup" className="px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-400 transition">
+										Sign Up
+									</Link>
+								</>
+							)}
+						</div>
 
-          {/* LOGO */}
-          <NavLink to="/" className="flex items-center gap-3">
-            <img src="/playstats.png" alt="PlayStats logo" className="h-10" />
-            <span className="text-lg font-semibold">
-              Play<span className="logo-gradient-text">Stats</span>
-            </span>
-          </NavLink>
+						{/* Mobile Menu Button */}
+						<button onClick={() => setMobileOpen(true)} aria-label="Open navigation menu" aria-expanded={mobileOpen} className="lg:hidden w-9 h-9 flex items-center justify-center rounded-md border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+							☰
+						</button>
+					</div>
+				</div>
+			</div>
 
-          {/* RIGHT SECTION */}
-          <div className="flex items-center gap-6">
+			{/* ================= MOBILE DRAWER ================= */}
+			{mobileOpen && (
+				<div className="fixed inset-0 bg-black/40 lg:hidden" onClick={closeMobile} aria-hidden="true"/>
+			)}
 
-            {/* THEME */}
-            <button
-              onClick={toggleTheme}
-              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700"
-            >
-              {dark ? "☀️" : "🌙"}
-            </button>
+			<nav className={`fixed top-0 left-0 h-full w-72 bg-white dark:bg-gray-950 shadow-xl transform transition-transform duration-300 lg:hidden ${mobileOpen ? "translate-x-0" : "-translate-x-full" }`} aria-label="Mobile Navigation">
+				<div className="p-6 space-y-6">
+					<ul className="space-y-4">
+						{links.map((link) => (
+							<li key={link.path}>
+								<NavLink to={link.path} onClick={closeMobile} className="block hover:text-emerald-500 transition">
+									{link.label}
+								</NavLink>
+							</li>
+						))}
+					</ul>
 
-            {/* DESKTOP NAV */}
-            <nav className="hidden lg:block">
-              <ul className="flex items-center gap-6 font-medium">
-                {links.map((link) => (
-                  <li key={link.path}>
-                    <NavLink
-                      to={link.path}
-                      className={({ isActive }) =>
-                        isActive
-                          ? "text-emerald-500 font-semibold"
-                          : "hover:text-emerald-500 transition"
-                      }
-                    >
-                      {link.label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-
-            {/* AUTH BUTTONS */}
-            <div className="hidden lg:flex items-center gap-3">
-              {isAuthenticated ? (
-                <button
-                  onClick={() => navigate("/app/dashboard")}
-                  className="px-5 py-2 bg-emerald-500 text-white rounded-md"
-                >
-                  Open App
-                </button>
-              ) : (
-                <>
-                  <button
-                    onClick={() => navigate("/login")}
-                    className="px-4 py-2 border rounded-md"
-                  >
-                    Login
-                  </button>
-                  <button
-                    onClick={() => navigate("/signup")}
-                    className="px-4 py-2 bg-emerald-500 text-white rounded-md"
-                  >
-                    Sign Up
-                  </button>
-                </>
-              )}
-            </div>
-
-            {/* MOBILE MENU BUTTON */}
-            <button
-              onClick={() => setMobileOpen(true)}
-              className="lg:hidden"
-            >
-              ☰
-            </button>
-
-          </div>
-        </div>
-      </div>
-
-      {/* MOBILE DRAWER */}
-      {mobileOpen && (
-        <div className="fixed inset-0 bg-black/40 lg:hidden" onClick={closeMobile} />
-      )}
-
-      <div
-        ref={drawerRef}
-        className={`fixed top-0 left-0 h-full w-72 bg-white dark:bg-gray-950 shadow-xl transform transition-transform duration-300 lg:hidden ${
-          mobileOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="p-6 space-y-6">
-          {links.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              onClick={closeMobile}
-              className="block hover:text-emerald-500"
-            >
-              {link.label}
-            </NavLink>
-          ))}
-
-          <div className="pt-6 border-t border-gray-200 dark:border-gray-800">
-            {isAuthenticated ? (
-              <button
-                onClick={() => navigate("/app/dashboard")}
-                className="w-full px-4 py-2 bg-emerald-500 text-white rounded-md"
-              >
-                Open App
-              </button>
-            ) : (
-              <>
-                <button
-                  onClick={() => navigate("/login")}
-                  className="w-full mb-3 px-4 py-2 border rounded-md"
-                >
-                  Login
-                </button>
-                <button
-                  onClick={() => navigate("/signup")}
-                  className="w-full px-4 py-2 bg-emerald-500 text-white rounded-md"
-                >
-                  Sign Up
-                </button>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-    </header>
-  );
+					<div className="pt-6 border-t border-gray-200 dark:border-gray-800 space-y-3">
+						{isAuthenticated ? (
+							<Link to="/app/dashboard" onClick={closeMobile} className="block w-full px-4 py-2 bg-emerald-500 text-white text-center rounded-md">
+								Open App
+							</Link>
+						) : (
+							<>
+								<Link to="/login" onClick={closeMobile} className="block w-full px-4 py-2 bg-emerald-500 text-white text-center rounded-md">
+									Login
+								</Link>
+								<Link to="/signup" onClick={closeMobile} className="block w-full px-4 py-2 bg-emerald-500 text-white text-center rounded-md">
+									Sign Up
+								</Link>
+							</>
+						)}
+					</div>
+				</div>
+			</nav>
+		</header>
+	);
 }

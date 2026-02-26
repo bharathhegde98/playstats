@@ -46,50 +46,50 @@ function SportRoute({ children }: ProtectedProps) {
 /* ---------------- Routes ---------------- */
 
 function AppRoutes() {
-  return (
-    <Routes>
-		{/* Public Layout */}
-		<Route element={<RootLayout />}>
-			<Route path="/" element={<Home />} />
-			<Route path="/contact" element={<Contact />} />
+	return (
+		<Routes>
+			{/* Public Layout */}
+			<Route element={<RootLayout />}>
+				<Route path="/" element={<Home />} />
+				<Route path="/contact" element={<Contact />} />
 
-			{/* Dynamic Sport Routes */}
-			<Route path="/:sportName" element={<SportLayout />}>
-			<Route path="live" element={<SportLive />} />
-			<Route path="guide" element={<SportGuide />} />
+				{/* Dynamic Sport Routes */}
+				<Route path="/:sportName" element={<SportLayout />}>
+				<Route path="live" element={<SportLive />} />
+				<Route path="guide" element={<SportGuide />} />
+				</Route>
 			</Route>
-		</Route>
 
-		{/* Auth Pages */}
-		<Route path="/login" element={<Login />} />
-		<Route path="/signup" element={<Signup />} />
+			{/* Auth Pages */}
+			<Route path="/login" element={<Login />} />
+			<Route path="/signup" element={<Signup />} />
 
-		{/* Sport Selection */}
-		<Route path="/select-sport" element={
-			<PrivateRoute>
-				<SportSelect />
-			</PrivateRoute>
-		}/>
+			{/* Sport Selection */}
+			<Route path="/select-sport" element={
+				<PrivateRoute>
+					<SportSelect />
+				</PrivateRoute>
+			}/>
 
-		{/* Main App (Protected + Sport Selected) */}
-		<Route path="/app" element={
-			<SportRoute>
-				<AppLayout />
-			</SportRoute>
-		}>
-			<Route index element={<Navigate to="/app/dashboard" replace />} />
-			<Route path="dashboard" element={<Dashboard />} />
-			<Route path="create" element={<CreateTournament />} />
-			<Route path="profile" element={<Profile />} />
-		</Route>
+			{/* Main App (Protected + Sport Selected) */}
+			<Route path="/app" element={
+				<SportRoute>
+					<AppLayout />
+				</SportRoute>
+			}>
+				<Route index element={<Navigate to="/app/dashboard" replace />} />
+				<Route path="dashboard" element={<Dashboard />} />
+				<Route path="create" element={<CreateTournament />} />
+				<Route path="profile" element={<Profile />} />
+			</Route>
 
-		{/* Public Join */}
-		<Route path="/join/:inviteCode" element={<JoinTournament />} />
+			{/* Public Join */}
+			<Route path="/join/:inviteCode" element={<JoinTournament />} />
 
-		{/* Fallback */}
-		<Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-  );
+			{/* Fallback */}
+			<Route path="*" element={<Navigate to="/" replace />} />
+		</Routes>
+	);
 }
 
 
@@ -98,9 +98,9 @@ function AppRoutes() {
 export default function App() {
 	return (
 		<AuthProvider>
-		<SportProvider>
-			<AppRoutes />
-		</SportProvider>
+			<SportProvider>
+				<AppRoutes />
+			</SportProvider>
 		</AuthProvider>
 	);
 }
