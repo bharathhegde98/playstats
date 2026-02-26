@@ -3,6 +3,8 @@ import SportCard from "../components/SportCard";
 import FeatureCard from "../components/FeatureCard";
 import StatCard from "../components/StatCard";
 import TestimonialSlider from "../components/TestimonialSlider";
+import RegisterSection from "../components/RegisterSection";
+
 /* ================= Types ================= */
 
 interface Feature {
@@ -10,18 +12,17 @@ interface Feature {
   desc: string;
 }
 
-
 /* ================= Home ================= */
 
 export default function Home() {
   const features: Feature[] = [
-      { title: "Live Match Tracking", desc: "Real-time scores and player stats instantly." },
-      { title: "Advanced Analytics", desc: "Deep performance breakdowns for teams and players." },
-      { title: "Smart Leaderboards", desc: "Dynamic ranking systems for competitions." },
-      { title: "Tournament Management", desc: "Organize and manage tournaments easily." },
-      { title: "Match Highlights", desc: "Relive key moments from every game." },
-      { title: "Community Network", desc: "Connect with fans and players worldwide." }
-    ];
+    { title: "Live Match Tracking", desc: "Real-time scores and player stats instantly." },
+    { title: "Advanced Analytics", desc: "Deep performance breakdowns for teams and players." },
+    { title: "Smart Leaderboards", desc: "Dynamic ranking systems for competitions." },
+    { title: "Tournament Management", desc: "Organize and manage tournaments easily." },
+    { title: "Match Highlights", desc: "Relive key moments from every game." },
+    { title: "Community Network", desc: "Connect with fans and players worldwide." }
+  ];
 
   return (
     <>
@@ -34,14 +35,26 @@ export default function Home() {
         </RevealFade>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <SportCard name="Cricket" image="/images/card-cricket.jpg" sportId="cricket" />
-          <SportCard name="Football" image="/images/card-soccer.jpg" sportId="football" />
-          <SportCard name="Volleyball" image="/images/card-vollyball.jpg" sportId="volleyball" />
+          <SportCard
+            name="Cricket"
+            image="/images/card-cricket.jpg"
+            sportId="cricket"
+          />
+          <SportCard
+            name="Football"
+            image="/images/card-soccer.jpg"
+            sportId="football"
+          />
+          <SportCard
+            name="Volleyball"
+            image="/images/card-vollyball.jpg"
+            sportId="volleyball"
+          />
         </div>
       </section>
 
       {/* ================= Why PlayStats ================= */}
-      <section className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-28">
+      <section className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-24">
         <div className="max-w-7xl mx-auto px-6">
           <RevealFade>
             <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
@@ -63,7 +76,7 @@ export default function Home() {
       </section>
 
       {/* ================= Stats ================= */}
-      <section className="py-28">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <RevealFade>
             <h2 className="text-4xl font-bold mb-16 text-gray-900 dark:text-white">
@@ -80,21 +93,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= Register ================= */}
+      <RegisterSection
+        title="Be Part of the Action"
+        description="Join today and start your journey with us."
+      />
+
       {/* ================= Testimonials ================= */}
-      <section className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-28">
+      <section className="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-24">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <RevealFade>
             <h2 className="text-4xl font-bold mb-16 text-gray-900 dark:text-white">
               What Users Say
             </h2>
           </RevealFade>
+
           <RevealFade>
             <TestimonialSlider />
           </RevealFade>
-          
         </div>
       </section>
     </>
   );
 }
-

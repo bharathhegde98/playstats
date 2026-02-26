@@ -21,7 +21,6 @@ export default function SportCard({ name, image, sportId }: SportCardProps) {
       setSport(sportId);
       navigate("/app/dashboard");
     } else {
-      // Store intended sport so SportSelect can pre-highlight it
       localStorage.setItem("ps_intended_sport", sportId);
       navigate("/login");
     }
@@ -36,14 +35,16 @@ export default function SportCard({ name, image, sportId }: SportCardProps) {
         <img
           src={image}
           alt={name}
-          className={`w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 ${
+          className={`w-full h-full object-cover transition-transform duration-1000 ease-out ${
             visible ? "scale-100" : "scale-110"
-          }`}
+          } group-hover:scale-105`}
         />
       </div>
 
       <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors flex flex-col items-center justify-center gap-2">
-        <h2 className="text-2xl font-bold text-white tracking-wide">{name}</h2>
+        <h2 className="text-2xl font-bold text-white tracking-wide">
+          {name}
+        </h2>
         <span className="text-sm text-white/70 border border-white/30 rounded-full px-3 py-0.5 group-hover:border-white/60 transition-colors">
           {isAuthenticated ? "Go to Dashboard →" : "Get Started →"}
         </span>

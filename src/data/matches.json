@@ -1,0 +1,490 @@
+[
+{"id":1,"sport":"cricket","stage":"League","status":"live","matchType":"tournament","tournamentName":"Karnataka Premier League 2026","venue":"Chinnaswamy Stadium","location":"Bengaluru","date":"2026-02-20","startTime":"02:30 PM","format":"T20","toss":{"winner":"Bangalore Blasters","decision":"bat"},"teamA":{"name":"Bangalore Blasters","runs":178,"wickets":5,"overs":"20.0"},"teamB":{"name":"Mysuru Kings","runs":120,"wickets":3,"overs":"15.0"},"liveInfo":{"runsNeeded":59,"ballsLeft":30},"result":null},
+
+{"id":2,"sport":"cricket","stage":"League","status":"live","matchType":"tournament","tournamentName":"Karnataka Premier League 2026","venue":"KSCA Ground","location":"Hubli","date":"2026-02-21","startTime":"01:00 PM","format":"T20","toss":{"winner":"Hubli Hawks","decision":"field"},"teamA":{"name":"Belgaum Warriors","runs":155,"wickets":6,"overs":"18.4"},"teamB":{"name":"Hubli Hawks","runs":90,"wickets":2,"overs":"10.0"},"liveInfo":{"runsNeeded":66,"ballsLeft":60},"result":null},
+
+{"id":3,"sport":"cricket","stage":"League","status":"live","matchType":"individual","venue":"District Ground","location":"Sirsi","date":"2026-02-22","startTime":"03:00 PM","format":"T20","toss":{"winner":"Local XI","decision":"bat"},"teamA":{"name":"Local XI","runs":140,"wickets":4,"overs":"15.0"},"teamB":{"name":"Village XI","runs":95,"wickets":3,"overs":"12.0"},"liveInfo":{"runsNeeded":46,"ballsLeft":48},"result":null},
+
+{"id":4,"sport":"cricket","stage":"League","status":"live","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"MA Chidambaram Stadium","location":"Chennai","date":"2026-02-22","startTime":"04:00 PM","format":"T20","toss":{"winner":"Chennai Chargers","decision":"bat"},"teamA":{"name":"Chennai Chargers","runs":165,"wickets":7,"overs":"19.0"},"teamB":{"name":"Coimbatore Kings","runs":110,"wickets":4,"overs":"14.0"},"liveInfo":{"runsNeeded":56,"ballsLeft":36},"result":null},
+
+{"id":5,"sport":"cricket","stage":"Knockout","status":"live","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"Rajiv Gandhi Stadium","location":"Hyderabad","date":"2026-02-23","startTime":"06:00 PM","format":"T20","toss":{"winner":"Hyderabad Strikers","decision":"field"},"teamA":{"name":"Vizag Titans","runs":150,"wickets":8,"overs":"20.0"},"teamB":{"name":"Hyderabad Strikers","runs":75,"wickets":1,"overs":"8.0"},"liveInfo":{"runsNeeded":76,"ballsLeft":72},"result":null},
+
+{"id":6,"sport":"cricket","stage":"League","status":"live","matchType":"individual","venue":"Town Ground","location":"Mangaluru","date":"2026-02-24","startTime":"02:00 PM","format":"T20","toss":{"winner":"Coastal Riders","decision":"bat"},"teamA":{"name":"Coastal Riders","runs":130,"wickets":3,"overs":"12.0"},"teamB":{"name":"Sea Warriors","runs":60,"wickets":2,"overs":"7.0"},"liveInfo":{"runsNeeded":71,"ballsLeft":78},"result":null},
+
+{"id":7,"sport":"cricket","stage":"League","status":"live","matchType":"tournament","tournamentName":"KPL 2026","venue":"Hubli Stadium","location":"Hubli","date":"2026-02-24","startTime":"01:30 PM","format":"T20","toss":{"winner":"Hubli Hawks","decision":"bat"},"teamA":{"name":"Hubli Hawks","runs":185,"wickets":6,"overs":"20.0"},"teamB":{"name":"Mysuru Kings","runs":130,"wickets":4,"overs":"14.0"},"liveInfo":{"runsNeeded":56,"ballsLeft":36},"result":null},
+
+{"id":8,"sport":"cricket","stage":"League","status":"live","matchType":"individual","venue":"Local Stadium","location":"Dharwad","date":"2026-02-25","startTime":"03:30 PM","format":"T20","toss":{"winner":"Dharwad XI","decision":"field"},"teamA":{"name":"North XI","runs":120,"wickets":5,"overs":"16.0"},"teamB":{"name":"Dharwad XI","runs":70,"wickets":1,"overs":"8.0"},"liveInfo":{"runsNeeded":51,"ballsLeft":72},"result":null},
+
+{"id":9,"sport":"cricket","stage":"League","status":"live","matchType":"tournament","tournamentName":"KPL 2026","venue":"Belgaum Ground","location":"Belgaum","date":"2026-02-25","startTime":"05:00 PM","format":"T20","toss":{"winner":"Belgaum Blazers","decision":"bat"},"teamA":{"name":"Belgaum Blazers","runs":170,"wickets":6,"overs":"20.0"},"teamB":{"name":"Hubli Hawks","runs":95,"wickets":3,"overs":"12.0"},"liveInfo":{"runsNeeded":76,"ballsLeft":48},"result":null},
+
+{"id":10,"sport":"cricket","stage":"League","status":"live","matchType":"individual","venue":"City Ground","location":"Tumakuru","date":"2026-02-26","startTime":"04:30 PM","format":"T20","toss":{"winner":"City Stars","decision":"bat"},"teamA":{"name":"City Stars","runs":150,"wickets":4,"overs":"14.0"},"teamB":{"name":"Town Challengers","runs":100,"wickets":5,"overs":"12.0"},"liveInfo":{"runsNeeded":51,"ballsLeft":48},"result":null}
+,
+{"id":21,"sport":"cricket","stage":"League","status":"finished","matchType":"tournament","tournamentName":"Karnataka Premier League 2026","venue":"Chinnaswamy Stadium","location":"Bengaluru","date":"2026-02-10","startTime":"02:30 PM","format":"T20","toss":{"winner":"Bangalore Blasters","decision":"bat"},"teamA":{"name":"Bangalore Blasters","runs":185,"wickets":6,"overs":"20.0"},"teamB":{"name":"Mysuru Kings","runs":170,"wickets":8,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Bangalore Blasters","winBy":"15 runs"}}
+
+,
+{"id":22,"sport":"cricket","stage":"League","status":"finished","matchType":"individual","venue":"District Ground","location":"Sirsi","date":"2026-02-11","startTime":"03:00 PM","format":"T20","toss":{"winner":"Village XI","decision":"field"},"teamA":{"name":"Local XI","runs":150,"wickets":7,"overs":"20.0"},"teamB":{"name":"Village XI","runs":151,"wickets":5,"overs":"19.4"},"liveInfo":null,"result":{"winner":"Village XI","winBy":"5 wickets"}}
+
+,
+{"id":23,"sport":"cricket","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"MA Chidambaram Stadium","location":"Chennai","date":"2026-02-12","startTime":"06:00 PM","format":"T20","toss":{"winner":"Chennai Chargers","decision":"bat"},"teamA":{"name":"Chennai Chargers","runs":200,"wickets":5,"overs":"20.0"},"teamB":{"name":"Coimbatore Kings","runs":180,"wickets":9,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Chennai Chargers","winBy":"20 runs"}}
+
+,
+{"id":24,"sport":"cricket","stage":"League","status":"finished","matchType":"individual","venue":"Town Stadium","location":"Udupi","date":"2026-02-13","startTime":"01:00 PM","format":"T20","toss":{"winner":"Udupi Stars","decision":"bat"},"teamA":{"name":"Udupi Stars","runs":145,"wickets":6,"overs":"20.0"},"teamB":{"name":"Coastal XI","runs":130,"wickets":8,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Udupi Stars","winBy":"15 runs"}}
+
+,
+{"id":25,"sport":"cricket","stage":"Final Stage","status":"finished","matchType":"tournament","tournamentName":"KPL 2026","venue":"National Cricket Arena","location":"Chennai","date":"2026-02-14","startTime":"07:00 PM","format":"T20","toss":{"winner":"Hubli Hawks","decision":"field"},"teamA":{"name":"Bangalore Blasters","runs":190,"wickets":4,"overs":"20.0"},"teamB":{"name":"Hubli Hawks","runs":160,"wickets":9,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Bangalore Blasters","winBy":"30 runs"}}
+
+,
+{"id":26,"sport":"cricket","stage":"League","status":"finished","matchType":"tournament","tournamentName":"KPL 2026","venue":"Hubli Stadium","location":"Hubli","date":"2026-02-15","startTime":"02:30 PM","format":"T20","toss":{"winner":"Belgaum Blazers","decision":"bat"},"teamA":{"name":"Belgaum Blazers","runs":160,"wickets":8,"overs":"20.0"},"teamB":{"name":"Hubli Hawks","runs":150,"wickets":9,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Belgaum Blazers","winBy":"10 runs"}}
+
+,
+{"id":27,"sport":"cricket","stage":"League","status":"finished","matchType":"individual","venue":"City Ground","location":"Tumakuru","date":"2026-02-16","startTime":"03:00 PM","format":"T20","toss":{"winner":"Town Challengers","decision":"field"},"teamA":{"name":"City Stars","runs":170,"wickets":6,"overs":"20.0"},"teamB":{"name":"Town Challengers","runs":171,"wickets":4,"overs":"19.3"},"liveInfo":null,"result":{"winner":"Town Challengers","winBy":"6 wickets"}}
+
+,
+{"id":28,"sport":"cricket","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"Rajiv Gandhi Stadium","location":"Hyderabad","date":"2026-02-17","startTime":"06:30 PM","format":"T20","toss":{"winner":"Vizag Titans","decision":"bat"},"teamA":{"name":"Vizag Titans","runs":210,"wickets":5,"overs":"20.0"},"teamB":{"name":"Hyderabad Strikers","runs":205,"wickets":7,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Vizag Titans","winBy":"5 runs"}}
+
+,
+{"id":29,"sport":"cricket","stage":"League","status":"finished","matchType":"individual","venue":"District Stadium","location":"Shivamogga","date":"2026-02-18","startTime":"02:00 PM","format":"T20","toss":{"winner":"Malnad Warriors","decision":"bat"},"teamA":{"name":"Malnad Warriors","runs":155,"wickets":7,"overs":"20.0"},"teamB":{"name":"Shivamogga XI","runs":140,"wickets":9,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Malnad Warriors","winBy":"15 runs"}}
+
+,
+{"id":30,"sport":"cricket","stage":"League","status":"finished","matchType":"tournament","tournamentName":"KPL 2026","venue":"Belgaum Ground","location":"Belgaum","date":"2026-02-18","startTime":"05:00 PM","format":"T20","toss":{"winner":"Mysuru Kings","decision":"field"},"teamA":{"name":"Bangalore Blasters","runs":165,"wickets":6,"overs":"20.0"},"teamB":{"name":"Mysuru Kings","runs":166,"wickets":5,"overs":"19.5"},"liveInfo":null,"result":{"winner":"Mysuru Kings","winBy":"5 wickets"}}
+,
+{"id":31,"sport":"cricket","stage":"League","status":"finished","matchType":"tournament","tournamentName":"Karnataka Premier League 2026","venue":"KSCA Ground","location":"Bengaluru","date":"2026-02-19","startTime":"02:30 PM","format":"T20","toss":{"winner":"Hubli Hawks","decision":"bat"},"teamA":{"name":"Hubli Hawks","runs":175,"wickets":6,"overs":"20.0"},"teamB":{"name":"Belgaum Blazers","runs":160,"wickets":8,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Hubli Hawks","winBy":"15 runs"}}
+
+,
+{"id":32,"sport":"cricket","stage":"League","status":"finished","matchType":"individual","venue":"Town Ground","location":"Mangaluru","date":"2026-02-20","startTime":"03:00 PM","format":"T20","toss":{"winner":"Sea Warriors","decision":"field"},"teamA":{"name":"Coastal Riders","runs":140,"wickets":9,"overs":"20.0"},"teamB":{"name":"Sea Warriors","runs":141,"wickets":6,"overs":"19.2"},"liveInfo":null,"result":{"winner":"Sea Warriors","winBy":"4 wickets"}}
+
+,
+{"id":33,"sport":"cricket","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"MA Chidambaram Stadium","location":"Chennai","date":"2026-02-21","startTime":"06:00 PM","format":"T20","toss":{"winner":"Coimbatore Kings","decision":"bat"},"teamA":{"name":"Coimbatore Kings","runs":185,"wickets":4,"overs":"20.0"},"teamB":{"name":"Chennai Chargers","runs":170,"wickets":9,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Coimbatore Kings","winBy":"15 runs"}}
+
+,
+{"id":34,"sport":"cricket","stage":"League","status":"finished","matchType":"individual","venue":"City Stadium","location":"Davangere","date":"2026-02-22","startTime":"01:00 PM","format":"T20","toss":{"winner":"Central Warriors","decision":"bat"},"teamA":{"name":"Central Warriors","runs":150,"wickets":6,"overs":"20.0"},"teamB":{"name":"Davangere XI","runs":130,"wickets":9,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Central Warriors","winBy":"20 runs"}}
+
+,
+{"id":35,"sport":"cricket","stage":"Final Stage","status":"finished","matchType":"tournament","tournamentName":"KPL 2026","venue":"National Cricket Arena","location":"Chennai","date":"2026-02-23","startTime":"07:00 PM","format":"T20","toss":{"winner":"Mysuru Kings","decision":"bat"},"teamA":{"name":"Mysuru Kings","runs":210,"wickets":5,"overs":"20.0"},"teamB":{"name":"Hubli Hawks","runs":200,"wickets":8,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Mysuru Kings","winBy":"10 runs"}}
+
+,
+{"id":36,"sport":"cricket","stage":"League","status":"finished","matchType":"tournament","tournamentName":"KPL 2026","venue":"Hubli Stadium","location":"Hubli","date":"2026-02-24","startTime":"02:00 PM","format":"T20","toss":{"winner":"Belgaum Blazers","decision":"field"},"teamA":{"name":"Mysuru Kings","runs":165,"wickets":7,"overs":"20.0"},"teamB":{"name":"Belgaum Blazers","runs":166,"wickets":5,"overs":"19.4"},"liveInfo":null,"result":{"winner":"Belgaum Blazers","winBy":"5 wickets"}}
+
+,
+{"id":37,"sport":"cricket","stage":"League","status":"finished","matchType":"individual","venue":"District Ground","location":"Shivamogga","date":"2026-02-25","startTime":"03:30 PM","format":"T20","toss":{"winner":"Shivamogga XI","decision":"bat"},"teamA":{"name":"Shivamogga XI","runs":155,"wickets":8,"overs":"20.0"},"teamB":{"name":"Malnad Warriors","runs":140,"wickets":9,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Shivamogga XI","winBy":"15 runs"}}
+
+,
+{"id":38,"sport":"cricket","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"Rajiv Gandhi Stadium","location":"Hyderabad","date":"2026-02-26","startTime":"06:30 PM","format":"T20","toss":{"winner":"Hyderabad Strikers","decision":"bat"},"teamA":{"name":"Hyderabad Strikers","runs":195,"wickets":6,"overs":"20.0"},"teamB":{"name":"Vizag Titans","runs":180,"wickets":7,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Hyderabad Strikers","winBy":"15 runs"}}
+
+,
+{"id":39,"sport":"cricket","stage":"League","status":"finished","matchType":"individual","venue":"Town Stadium","location":"Udupi","date":"2026-02-27","startTime":"01:30 PM","format":"T20","toss":{"winner":"Coastal XI","decision":"field"},"teamA":{"name":"Udupi Stars","runs":140,"wickets":9,"overs":"20.0"},"teamB":{"name":"Coastal XI","runs":141,"wickets":7,"overs":"19.5"},"liveInfo":null,"result":{"winner":"Coastal XI","winBy":"3 wickets"}}
+
+,
+{"id":40,"sport":"cricket","stage":"League","status":"finished","matchType":"tournament","tournamentName":"KPL 2026","venue":"Belgaum Ground","location":"Belgaum","date":"2026-02-28","startTime":"05:00 PM","format":"T20","toss":{"winner":"Hubli Hawks","decision":"bat"},"teamA":{"name":"Hubli Hawks","runs":180,"wickets":5,"overs":"20.0"},"teamB":{"name":"Bangalore Blasters","runs":170,"wickets":8,"overs":"20.0"},"liveInfo":null,"result":{"winner":"Hubli Hawks","winBy":"10 runs"}}
+,
+{"id":41,"sport":"cricket","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"Karnataka Premier League 2026","venue":"Chinnaswamy Stadium","location":"Bengaluru","date":"2026-03-05","startTime":"02:30 PM","format":"T20","toss":null,"teamA":{"name":"Bangalore Blasters"},"teamB":{"name":"Mysuru Kings"},"liveInfo":null,"result":null}
+
+,
+{"id":42,"sport":"cricket","stage":"League","status":"upcoming","matchType":"individual","venue":"Town Ground","location":"Sirsi","date":"2026-03-06","startTime":"03:00 PM","format":"T20","toss":null,"teamA":{"name":"Local XI"},"teamB":{"name":"Village XI"},"liveInfo":null,"result":null}
+
+,
+{"id":43,"sport":"cricket","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"MA Chidambaram Stadium","location":"Chennai","date":"2026-03-06","startTime":"06:00 PM","format":"T20","toss":null,"teamA":{"name":"Chennai Chargers"},"teamB":{"name":"Coimbatore Kings"},"liveInfo":null,"result":null}
+
+,
+{"id":44,"sport":"cricket","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"Rajiv Gandhi Stadium","location":"Hyderabad","date":"2026-03-07","startTime":"07:00 PM","format":"T20","toss":null,"teamA":{"name":"Hyderabad Strikers"},"teamB":{"name":"Vizag Titans"},"liveInfo":null,"result":null}
+
+,
+{"id":45,"sport":"cricket","stage":"League","status":"upcoming","matchType":"individual","venue":"City Stadium","location":"Tumakuru","date":"2026-03-07","startTime":"02:00 PM","format":"T20","toss":null,"teamA":{"name":"City Stars"},"teamB":{"name":"Town Challengers"},"liveInfo":null,"result":null}
+
+,
+{"id":46,"sport":"cricket","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"KPL 2026","venue":"Hubli Stadium","location":"Hubli","date":"2026-03-08","startTime":"04:00 PM","format":"T20","toss":null,"teamA":{"name":"Hubli Hawks"},"teamB":{"name":"Belgaum Blazers"},"liveInfo":null,"result":null}
+
+,
+{"id":47,"sport":"cricket","stage":"League","status":"upcoming","matchType":"individual","venue":"District Ground","location":"Shivamogga","date":"2026-03-08","startTime":"03:30 PM","format":"T20","toss":null,"teamA":{"name":"Shivamogga XI"},"teamB":{"name":"Malnad Warriors"},"liveInfo":null,"result":null}
+
+,
+{"id":48,"sport":"cricket","stage":"Final Stage","status":"upcoming","matchType":"tournament","tournamentName":"KPL 2026","venue":"National Cricket Arena","location":"Chennai","date":"2026-03-09","startTime":"07:00 PM","format":"T20","toss":null,"teamA":{"name":"Bangalore Blasters"},"teamB":{"name":"Hubli Hawks"},"liveInfo":null,"result":null}
+
+,
+{"id":49,"sport":"cricket","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"Vizag Stadium","location":"Visakhapatnam","date":"2026-03-09","startTime":"05:30 PM","format":"T20","toss":null,"teamA":{"name":"Vizag Titans"},"teamB":{"name":"Coimbatore Kings"},"liveInfo":null,"result":null}
+
+,
+{"id":50,"sport":"cricket","stage":"League","status":"upcoming","matchType":"individual","venue":"Local Stadium","location":"Hassan","date":"2026-03-10","startTime":"02:30 PM","format":"T20","toss":null,"teamA":{"name":"Hassan XI"},"teamB":{"name":"Village Warriors"},"liveInfo":null,"result":null}
+
+,
+{"id":51,"sport":"cricket","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"KPL 2026","venue":"Belgaum Ground","location":"Belgaum","date":"2026-03-10","startTime":"04:00 PM","format":"T20","toss":null,"teamA":{"name":"Belgaum Blazers"},"teamB":{"name":"Mysuru Kings"},"liveInfo":null,"result":null}
+
+,
+{"id":52,"sport":"cricket","stage":"League","status":"upcoming","matchType":"individual","venue":"Town Stadium","location":"Udupi","date":"2026-03-11","startTime":"03:00 PM","format":"T20","toss":null,"teamA":{"name":"Udupi Stars"},"teamB":{"name":"Coastal XI"},"liveInfo":null,"result":null}
+
+,
+{"id":53,"sport":"cricket","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"MA Chidambaram Stadium","location":"Chennai","date":"2026-03-11","startTime":"06:30 PM","format":"T20","toss":null,"teamA":{"name":"Chennai Chargers"},"teamB":{"name":"Hyderabad Strikers"},"liveInfo":null,"result":null}
+
+,
+{"id":54,"sport":"cricket","stage":"League","status":"upcoming","matchType":"individual","venue":"City Ground","location":"Davangere","date":"2026-03-12","startTime":"01:00 PM","format":"T20","toss":null,"teamA":{"name":"Central Warriors"},"teamB":{"name":"Davangere XI"},"liveInfo":null,"result":null}
+
+,
+{"id":55,"sport":"cricket","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"KPL 2026","venue":"Hubli Stadium","location":"Hubli","date":"2026-03-12","startTime":"05:00 PM","format":"T20","toss":null,"teamA":{"name":"Hubli Hawks"},"teamB":{"name":"Bangalore Blasters"},"liveInfo":null,"result":null}
+
+,
+{"id":56,"sport":"cricket","stage":"League","status":"upcoming","matchType":"individual","venue":"District Ground","location":"Sirsi","date":"2026-03-13","startTime":"03:30 PM","format":"T20","toss":null,"teamA":{"name":"Village XI"},"teamB":{"name":"Local XI"},"liveInfo":null,"result":null}
+
+,
+{"id":57,"sport":"cricket","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"South Zone Trophy","venue":"Rajiv Gandhi Stadium","location":"Hyderabad","date":"2026-03-13","startTime":"07:00 PM","format":"T20","toss":null,"teamA":{"name":"Vizag Titans"},"teamB":{"name":"Chennai Chargers"},"liveInfo":null,"result":null}
+
+,
+{"id":58,"sport":"cricket","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"KPL 2026","venue":"Belgaum Ground","location":"Belgaum","date":"2026-03-14","startTime":"02:00 PM","format":"T20","toss":null,"teamA":{"name":"Mysuru Kings"},"teamB":{"name":"Hubli Hawks"},"liveInfo":null,"result":null}
+
+,
+{"id":59,"sport":"cricket","stage":"League","status":"upcoming","matchType":"individual","venue":"Town Ground","location":"Mangaluru","date":"2026-03-14","startTime":"04:30 PM","format":"T20","toss":null,"teamA":{"name":"Coastal Riders"},"teamB":{"name":"Sea Warriors"},"liveInfo":null,"result":null}
+
+,
+{"id":60,"sport":"cricket","stage":"Final Stage","status":"upcoming","matchType":"tournament","tournamentName":"KPL 2026","venue":"National Cricket Arena","location":"Chennai","date":"2026-03-15","startTime":"07:00 PM","format":"T20","toss":null,"teamA":{"name":"Bangalore Blasters"},"teamB":{"name":"Belgaum Blazers"},"liveInfo":null,"result":null}
+,
+{"id":61,"sport":"volleyball","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Indoor Sports Complex","location":"Bengaluru","date":"2026-03-16","startTime":"04:00 PM","bestOf":5,"teamA":{"name":"Bangalore Spikers","setsWon":2,"currentSetScore":18},"teamB":{"name":"Chennai Blockers","setsWon":1,"currentSetScore":15},"liveInfo":null,"result":null}
+
+,
+{"id":62,"sport":"volleyball","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"City Arena","location":"Mysuru","date":"2026-03-16","startTime":"06:00 PM","bestOf":5,"teamA":{"name":"Mysuru Smashers","setsWon":1,"currentSetScore":20},"teamB":{"name":"Hubli Hitters","setsWon":2,"currentSetScore":22},"liveInfo":null,"result":null}
+
+,
+{"id":63,"sport":"volleyball","stage":"League","status":"live","matchType":"individual","venue":"Town Hall Court","location":"Sirsi","date":"2026-03-17","startTime":"03:00 PM","bestOf":3,"teamA":{"name":"Local Setters","setsWon":1,"currentSetScore":12},"teamB":{"name":"Village Smash","setsWon":1,"currentSetScore":14},"liveInfo":null,"result":null}
+
+,
+{"id":64,"sport":"volleyball","stage":"Knockout","status":"live","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"Sports Dome","location":"Hyderabad","date":"2026-03-17","startTime":"05:30 PM","bestOf":5,"teamA":{"name":"Hyderabad Blocks","setsWon":2,"currentSetScore":19},"teamB":{"name":"Vizag Spikes","setsWon":2,"currentSetScore":21},"liveInfo":null,"result":null}
+
+,
+{"id":65,"sport":"volleyball","stage":"League","status":"live","matchType":"individual","venue":"Community Court","location":"Udupi","date":"2026-03-18","startTime":"04:30 PM","bestOf":3,"teamA":{"name":"Coastal Jumpers","setsWon":0,"currentSetScore":10},"teamB":{"name":"Udupi Aces","setsWon":1,"currentSetScore":18},"liveInfo":null,"result":null}
+
+,
+{"id":66,"sport":"volleyball","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Indoor Arena","location":"Belgaum","date":"2026-03-18","startTime":"06:00 PM","bestOf":5,"teamA":{"name":"Belgaum Nets","setsWon":1,"currentSetScore":16},"teamB":{"name":"Hubli Spikers","setsWon":2,"currentSetScore":20},"liveInfo":null,"result":null}
+
+,
+{"id":67,"sport":"volleyball","stage":"Knockout","status":"live","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"National Sports Hall","location":"Chennai","date":"2026-03-19","startTime":"07:00 PM","bestOf":5,"teamA":{"name":"Chennai Servers","setsWon":2,"currentSetScore":22},"teamB":{"name":"Bangalore Spikers","setsWon":1,"currentSetScore":18},"liveInfo":null,"result":null}
+
+,
+{"id":68,"sport":"volleyball","stage":"League","status":"live","matchType":"individual","venue":"District Court","location":"Davangere","date":"2026-03-19","startTime":"02:00 PM","bestOf":3,"teamA":{"name":"Central Smash","setsWon":1,"currentSetScore":17},"teamB":{"name":"Davangere Dig","setsWon":0,"currentSetScore":12},"liveInfo":null,"result":null}
+
+,
+{"id":69,"sport":"volleyball","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Sports Complex","location":"Mangaluru","date":"2026-03-20","startTime":"05:00 PM","bestOf":5,"teamA":{"name":"Mangalore Jump","setsWon":2,"currentSetScore":23},"teamB":{"name":"Mysuru Smashers","setsWon":1,"currentSetScore":20},"liveInfo":null,"result":null}
+
+,
+{"id":70,"sport":"volleyball","stage":"League","status":"live","matchType":"individual","venue":"Town Indoor Court","location":"Hassan","date":"2026-03-20","startTime":"03:30 PM","bestOf":3,"teamA":{"name":"Hassan Spikes","setsWon":1,"currentSetScore":15},"teamB":{"name":"Village Blocks","setsWon":1,"currentSetScore":16},"liveInfo":null,"result":null}
+,
+{"id":71,"sport":"volleyball","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Indoor Sports Arena","location":"Bengaluru","date":"2026-03-21","startTime":"04:00 PM","bestOf":5,"teamA":{"name":"Bangalore Aces","setsWon":2,"currentSetScore":19},"teamB":{"name":"Chennai Smashers","setsWon":1,"currentSetScore":17},"liveInfo":null,"result":null}
+
+,
+{"id":72,"sport":"volleyball","stage":"League","status":"live","matchType":"individual","venue":"Community Indoor Court","location":"Sirsi","date":"2026-03-21","startTime":"03:00 PM","bestOf":3,"teamA":{"name":"Sirsi Jumpers","setsWon":1,"currentSetScore":14},"teamB":{"name":"Town Spikers","setsWon":1,"currentSetScore":15},"liveInfo":null,"result":null}
+
+,
+{"id":73,"sport":"volleyball","stage":"Knockout","status":"live","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"National Indoor Stadium","location":"Hyderabad","date":"2026-03-22","startTime":"06:30 PM","bestOf":5,"teamA":{"name":"Hyderabad Smash","setsWon":2,"currentSetScore":22},"teamB":{"name":"Vizag Servers","setsWon":2,"currentSetScore":20},"liveInfo":null,"result":null}
+
+,
+{"id":74,"sport":"volleyball","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"City Sports Hall","location":"Mysuru","date":"2026-03-22","startTime":"05:00 PM","bestOf":5,"teamA":{"name":"Mysuru Smashers","setsWon":1,"currentSetScore":18},"teamB":{"name":"Hubli Hitters","setsWon":2,"currentSetScore":21},"liveInfo":null,"result":null}
+
+,
+{"id":75,"sport":"volleyball","stage":"League","status":"live","matchType":"individual","venue":"District Court","location":"Udupi","date":"2026-03-23","startTime":"02:30 PM","bestOf":3,"teamA":{"name":"Udupi Nets","setsWon":0,"currentSetScore":11},"teamB":{"name":"Coastal Spikers","setsWon":1,"currentSetScore":19},"liveInfo":null,"result":null}
+
+,
+{"id":76,"sport":"volleyball","stage":"Knockout","status":"live","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"Sports Dome","location":"Chennai","date":"2026-03-23","startTime":"07:00 PM","bestOf":5,"teamA":{"name":"Chennai Blocks","setsWon":2,"currentSetScore":23},"teamB":{"name":"Bangalore Spikers","setsWon":1,"currentSetScore":20},"liveInfo":null,"result":null}
+
+,
+{"id":77,"sport":"volleyball","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Indoor Arena","location":"Belgaum","date":"2026-03-24","startTime":"04:30 PM","bestOf":5,"teamA":{"name":"Belgaum Nets","setsWon":1,"currentSetScore":17},"teamB":{"name":"Mangalore Jump","setsWon":2,"currentSetScore":21},"liveInfo":null,"result":null}
+
+,
+{"id":78,"sport":"volleyball","stage":"League","status":"live","matchType":"individual","venue":"Town Indoor Hall","location":"Hassan","date":"2026-03-24","startTime":"03:00 PM","bestOf":3,"teamA":{"name":"Hassan Smash","setsWon":1,"currentSetScore":13},"teamB":{"name":"Village Blocks","setsWon":1,"currentSetScore":16},"liveInfo":null,"result":null}
+
+,
+{"id":79,"sport":"volleyball","stage":"Final Stage","status":"live","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"National Sports Complex","location":"Bengaluru","date":"2026-03-25","startTime":"06:00 PM","bestOf":5,"teamA":{"name":"Bangalore Aces","setsWon":2,"currentSetScore":24},"teamB":{"name":"Chennai Smashers","setsWon":2,"currentSetScore":22},"liveInfo":null,"result":null}
+
+,
+{"id":80,"sport":"volleyball","stage":"League","status":"live","matchType":"individual","venue":"Community Sports Hall","location":"Davangere","date":"2026-03-25","startTime":"02:00 PM","bestOf":3,"teamA":{"name":"Davangere Dig","setsWon":0,"currentSetScore":9},"teamB":{"name":"Central Smash","setsWon":1,"currentSetScore":18},"liveInfo":null,"result":null}
+,
+{"id":81,"sport":"volleyball","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Indoor Sports Complex","location":"Bengaluru","date":"2026-03-10","startTime":"04:00 PM","bestOf":5,"teamA":{"name":"Bangalore Spikers","setsWon":3},"teamB":{"name":"Chennai Blockers","setsWon":1},"liveInfo":null,"result":{"winner":"Bangalore Spikers","winBy":"3-1 sets"}}
+
+,
+{"id":82,"sport":"volleyball","stage":"League","status":"finished","matchType":"individual","venue":"Town Court","location":"Sirsi","date":"2026-03-11","startTime":"03:00 PM","bestOf":3,"teamA":{"name":"Local Setters","setsWon":2},"teamB":{"name":"Village Smash","setsWon":0},"liveInfo":null,"result":{"winner":"Local Setters","winBy":"2-0 sets"}}
+
+,
+{"id":83,"sport":"volleyball","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"Sports Dome","location":"Hyderabad","date":"2026-03-12","startTime":"06:00 PM","bestOf":5,"teamA":{"name":"Hyderabad Blocks","setsWon":3},"teamB":{"name":"Vizag Spikes","setsWon":2},"liveInfo":null,"result":{"winner":"Hyderabad Blocks","winBy":"3-2 sets"}}
+
+,
+{"id":84,"sport":"volleyball","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"City Arena","location":"Mysuru","date":"2026-03-13","startTime":"05:00 PM","bestOf":5,"teamA":{"name":"Mysuru Smashers","setsWon":1},"teamB":{"name":"Hubli Hitters","setsWon":3},"liveInfo":null,"result":{"winner":"Hubli Hitters","winBy":"3-1 sets"}}
+
+,
+{"id":85,"sport":"volleyball","stage":"League","status":"finished","matchType":"individual","venue":"Community Court","location":"Udupi","date":"2026-03-14","startTime":"02:30 PM","bestOf":3,"teamA":{"name":"Coastal Jumpers","setsWon":2},"teamB":{"name":"Udupi Aces","setsWon":1},"liveInfo":null,"result":{"winner":"Coastal Jumpers","winBy":"2-1 sets"}}
+
+,
+{"id":86,"sport":"volleyball","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"National Sports Hall","location":"Chennai","date":"2026-03-15","startTime":"07:00 PM","bestOf":5,"teamA":{"name":"Chennai Servers","setsWon":3},"teamB":{"name":"Bangalore Spikers","setsWon":0},"liveInfo":null,"result":{"winner":"Chennai Servers","winBy":"3-0 sets"}}
+
+,
+{"id":87,"sport":"volleyball","stage":"League","status":"finished","matchType":"individual","venue":"District Court","location":"Davangere","date":"2026-03-16","startTime":"02:00 PM","bestOf":3,"teamA":{"name":"Central Smash","setsWon":2},"teamB":{"name":"Davangere Dig","setsWon":1},"liveInfo":null,"result":{"winner":"Central Smash","winBy":"2-1 sets"}}
+
+,
+{"id":88,"sport":"volleyball","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Sports Complex","location":"Mangaluru","date":"2026-03-17","startTime":"05:00 PM","bestOf":5,"teamA":{"name":"Mangalore Jump","setsWon":3},"teamB":{"name":"Mysuru Smashers","setsWon":2},"liveInfo":null,"result":{"winner":"Mangalore Jump","winBy":"3-2 sets"}}
+
+,
+{"id":89,"sport":"volleyball","stage":"League","status":"finished","matchType":"individual","venue":"Town Indoor Court","location":"Hassan","date":"2026-03-18","startTime":"03:30 PM","bestOf":3,"teamA":{"name":"Hassan Spikes","setsWon":0},"teamB":{"name":"Village Blocks","setsWon":2},"liveInfo":null,"result":{"winner":"Village Blocks","winBy":"2-0 sets"}}
+
+,
+{"id":90,"sport":"volleyball","stage":"Final Stage","status":"finished","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"National Sports Complex","location":"Bengaluru","date":"2026-03-19","startTime":"06:00 PM","bestOf":5,"teamA":{"name":"Bangalore Aces","setsWon":3},"teamB":{"name":"Chennai Smashers","setsWon":1},"liveInfo":null,"result":{"winner":"Bangalore Aces","winBy":"3-1 sets"}}
+
+,
+{"id":91,"sport":"volleyball","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Indoor Arena","location":"Belgaum","date":"2026-03-20","startTime":"04:30 PM","bestOf":5,"teamA":{"name":"Belgaum Nets","setsWon":2},"teamB":{"name":"Hubli Spikers","setsWon":3},"liveInfo":null,"result":{"winner":"Hubli Spikers","winBy":"3-2 sets"}}
+
+,
+{"id":92,"sport":"volleyball","stage":"League","status":"finished","matchType":"individual","venue":"Community Hall","location":"Sirsi","date":"2026-03-21","startTime":"03:00 PM","bestOf":3,"teamA":{"name":"Sirsi Jumpers","setsWon":1},"teamB":{"name":"Town Spikers","setsWon":2},"liveInfo":null,"result":{"winner":"Town Spikers","winBy":"2-1 sets"}}
+
+,
+{"id":93,"sport":"volleyball","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"National Indoor Stadium","location":"Hyderabad","date":"2026-03-22","startTime":"06:30 PM","bestOf":5,"teamA":{"name":"Hyderabad Smash","setsWon":3},"teamB":{"name":"Vizag Servers","setsWon":2},"liveInfo":null,"result":{"winner":"Hyderabad Smash","winBy":"3-2 sets"}}
+
+,
+{"id":94,"sport":"volleyball","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"City Sports Hall","location":"Mysuru","date":"2026-03-23","startTime":"05:00 PM","bestOf":5,"teamA":{"name":"Mysuru Smashers","setsWon":3},"teamB":{"name":"Hubli Hitters","setsWon":0},"liveInfo":null,"result":{"winner":"Mysuru Smashers","winBy":"3-0 sets"}}
+
+,
+{"id":95,"sport":"volleyball","stage":"League","status":"finished","matchType":"individual","venue":"District Court","location":"Udupi","date":"2026-03-24","startTime":"02:30 PM","bestOf":3,"teamA":{"name":"Udupi Nets","setsWon":2},"teamB":{"name":"Coastal Spikers","setsWon":0},"liveInfo":null,"result":{"winner":"Udupi Nets","winBy":"2-0 sets"}}
+
+,
+{"id":96,"sport":"volleyball","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"Sports Dome","location":"Chennai","date":"2026-03-25","startTime":"07:00 PM","bestOf":5,"teamA":{"name":"Chennai Blocks","setsWon":3},"teamB":{"name":"Bangalore Spikers","setsWon":2},"liveInfo":null,"result":{"winner":"Chennai Blocks","winBy":"3-2 sets"}}
+
+,
+{"id":97,"sport":"volleyball","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Indoor Arena","location":"Belgaum","date":"2026-03-26","startTime":"04:30 PM","bestOf":5,"teamA":{"name":"Belgaum Nets","setsWon":3},"teamB":{"name":"Mangalore Jump","setsWon":1},"liveInfo":null,"result":{"winner":"Belgaum Nets","winBy":"3-1 sets"}}
+
+,
+{"id":98,"sport":"volleyball","stage":"League","status":"finished","matchType":"individual","venue":"Town Indoor Hall","location":"Hassan","date":"2026-03-27","startTime":"03:00 PM","bestOf":3,"teamA":{"name":"Hassan Smash","setsWon":2},"teamB":{"name":"Village Blocks","setsWon":1},"liveInfo":null,"result":{"winner":"Hassan Smash","winBy":"2-1 sets"}}
+
+,
+{"id":99,"sport":"volleyball","stage":"Final Stage","status":"finished","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"National Sports Complex","location":"Bengaluru","date":"2026-03-28","startTime":"06:00 PM","bestOf":5,"teamA":{"name":"Bangalore Aces","setsWon":3},"teamB":{"name":"Chennai Smashers","setsWon":2},"liveInfo":null,"result":{"winner":"Bangalore Aces","winBy":"3-2 sets"}}
+
+,
+{"id":100,"sport":"volleyball","stage":"League","status":"finished","matchType":"individual","venue":"Community Sports Hall","location":"Davangere","date":"2026-03-29","startTime":"02:00 PM","bestOf":3,"teamA":{"name":"Davangere Dig","setsWon":0},"teamB":{"name":"Central Smash","setsWon":2},"liveInfo":null,"result":{"winner":"Central Smash","winBy":"2-0 sets"}}
+,
+{"id":101,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Indoor Sports Complex","location":"Bengaluru","date":"2026-04-01","startTime":"04:00 PM","bestOf":5,"teamA":{"name":"Bangalore Spikers"},"teamB":{"name":"Chennai Blockers"},"liveInfo":null,"result":null}
+
+,
+{"id":102,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"individual","venue":"Town Court","location":"Sirsi","date":"2026-04-01","startTime":"03:00 PM","bestOf":3,"teamA":{"name":"Local Setters"},"teamB":{"name":"Village Smash"},"liveInfo":null,"result":null}
+
+,
+{"id":103,"sport":"volleyball","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"Sports Dome","location":"Hyderabad","date":"2026-04-02","startTime":"06:00 PM","bestOf":5,"teamA":{"name":"Hyderabad Blocks"},"teamB":{"name":"Vizag Spikes"},"liveInfo":null,"result":null}
+
+,
+{"id":104,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"City Arena","location":"Mysuru","date":"2026-04-02","startTime":"05:00 PM","bestOf":5,"teamA":{"name":"Mysuru Smashers"},"teamB":{"name":"Hubli Hitters"},"liveInfo":null,"result":null}
+
+,
+{"id":105,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"individual","venue":"Community Court","location":"Udupi","date":"2026-04-03","startTime":"02:30 PM","bestOf":3,"teamA":{"name":"Coastal Jumpers"},"teamB":{"name":"Udupi Aces"},"liveInfo":null,"result":null}
+
+,
+{"id":106,"sport":"volleyball","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"National Sports Hall","location":"Chennai","date":"2026-04-03","startTime":"07:00 PM","bestOf":5,"teamA":{"name":"Chennai Servers"},"teamB":{"name":"Bangalore Spikers"},"liveInfo":null,"result":null}
+
+,
+{"id":107,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Sports Complex","location":"Mangaluru","date":"2026-04-04","startTime":"05:00 PM","bestOf":5,"teamA":{"name":"Mangalore Jump"},"teamB":{"name":"Belgaum Nets"},"liveInfo":null,"result":null}
+
+,
+{"id":108,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"individual","venue":"Town Indoor Court","location":"Hassan","date":"2026-04-04","startTime":"03:30 PM","bestOf":3,"teamA":{"name":"Hassan Spikes"},"teamB":{"name":"Village Blocks"},"liveInfo":null,"result":null}
+
+,
+{"id":109,"sport":"volleyball","stage":"Final Stage","status":"upcoming","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"National Sports Complex","location":"Bengaluru","date":"2026-04-05","startTime":"06:00 PM","bestOf":5,"teamA":{"name":"Bangalore Aces"},"teamB":{"name":"Chennai Smashers"},"liveInfo":null,"result":null}
+
+,
+{"id":110,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"individual","venue":"District Court","location":"Davangere","date":"2026-04-05","startTime":"02:00 PM","bestOf":3,"teamA":{"name":"Central Smash"},"teamB":{"name":"Davangere Dig"},"liveInfo":null,"result":null}
+
+,
+{"id":111,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Indoor Arena","location":"Belgaum","date":"2026-04-06","startTime":"04:30 PM","bestOf":5,"teamA":{"name":"Belgaum Nets"},"teamB":{"name":"Hubli Spikers"},"liveInfo":null,"result":null}
+
+,
+{"id":112,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"individual","venue":"Community Hall","location":"Sirsi","date":"2026-04-06","startTime":"03:00 PM","bestOf":3,"teamA":{"name":"Sirsi Jumpers"},"teamB":{"name":"Town Spikers"},"liveInfo":null,"result":null}
+
+,
+{"id":113,"sport":"volleyball","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"National Indoor Stadium","location":"Hyderabad","date":"2026-04-07","startTime":"06:30 PM","bestOf":5,"teamA":{"name":"Hyderabad Smash"},"teamB":{"name":"Vizag Servers"},"liveInfo":null,"result":null}
+
+,
+{"id":114,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"City Sports Hall","location":"Mysuru","date":"2026-04-07","startTime":"05:00 PM","bestOf":5,"teamA":{"name":"Mysuru Smashers"},"teamB":{"name":"Hubli Hitters"},"liveInfo":null,"result":null}
+
+,
+{"id":115,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"individual","venue":"District Court","location":"Udupi","date":"2026-04-08","startTime":"02:30 PM","bestOf":3,"teamA":{"name":"Udupi Nets"},"teamB":{"name":"Coastal Spikers"},"liveInfo":null,"result":null}
+
+,
+{"id":116,"sport":"volleyball","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"National Volleyball Cup 2026","venue":"Sports Dome","location":"Chennai","date":"2026-04-08","startTime":"07:00 PM","bestOf":5,"teamA":{"name":"Chennai Blocks"},"teamB":{"name":"Bangalore Spikers"},"liveInfo":null,"result":null}
+
+,
+{"id":117,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"Indoor Arena","location":"Belgaum","date":"2026-04-09","startTime":"04:30 PM","bestOf":5,"teamA":{"name":"Belgaum Nets"},"teamB":{"name":"Mangalore Jump"},"liveInfo":null,"result":null}
+
+,
+{"id":118,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"individual","venue":"Town Indoor Hall","location":"Hassan","date":"2026-04-09","startTime":"03:00 PM","bestOf":3,"teamA":{"name":"Hassan Smash"},"teamB":{"name":"Village Blocks"},"liveInfo":null,"result":null}
+
+,
+{"id":119,"sport":"volleyball","stage":"Final Stage","status":"upcoming","matchType":"tournament","tournamentName":"South India Volleyball League 2026","venue":"National Sports Complex","location":"Bengaluru","date":"2026-04-10","startTime":"06:00 PM","bestOf":5,"teamA":{"name":"Bangalore Aces"},"teamB":{"name":"Chennai Smashers"},"liveInfo":null,"result":null}
+
+,
+{"id":120,"sport":"volleyball","stage":"League","status":"upcoming","matchType":"individual","venue":"Community Sports Hall","location":"Davangere","date":"2026-04-10","startTime":"02:00 PM","bestOf":3,"teamA":{"name":"Davangere Dig"},"teamB":{"name":"Central Smash"},"liveInfo":null,"result":null}
+,
+{"id":121,"sport":"football","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Kanteerava Stadium","location":"Bengaluru","date":"2026-04-11","startTime":"04:00 PM","teamA":{"name":"Bangalore FC","goals":2},"teamB":{"name":"Chennai United","goals":1},"matchMinute":"67'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":122,"sport":"football","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Nehru Stadium","location":"Mysuru","date":"2026-04-11","startTime":"06:00 PM","teamA":{"name":"Mysuru Tigers","goals":1},"teamB":{"name":"Hubli Warriors","goals":1},"matchMinute":"54'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":123,"sport":"football","stage":"League","status":"live","matchType":"individual","venue":"Town Ground","location":"Sirsi","date":"2026-04-12","startTime":"03:00 PM","teamA":{"name":"Local Strikers","goals":0},"teamB":{"name":"Village FC","goals":1},"matchMinute":"39'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":124,"sport":"football","stage":"Knockout","status":"live","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Gachibowli Stadium","location":"Hyderabad","date":"2026-04-12","startTime":"07:00 PM","teamA":{"name":"Hyderabad City","goals":2},"teamB":{"name":"Vizag Blues","goals":2},"matchMinute":"78'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":125,"sport":"football","stage":"League","status":"live","matchType":"individual","venue":"District Stadium","location":"Udupi","date":"2026-04-13","startTime":"02:30 PM","teamA":{"name":"Coastal FC","goals":1},"teamB":{"name":"Udupi United","goals":0},"matchMinute":"61'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":126,"sport":"football","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Tilak Maidan","location":"Belgaum","date":"2026-04-13","startTime":"05:00 PM","teamA":{"name":"Belgaum Knights","goals":0},"teamB":{"name":"Mangalore Mariners","goals":2},"matchMinute":"70'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":127,"sport":"football","stage":"Knockout","status":"live","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Jawaharlal Nehru Stadium","location":"Chennai","date":"2026-04-14","startTime":"08:00 PM","teamA":{"name":"Chennai Superstars","goals":3},"teamB":{"name":"Bangalore FC","goals":2},"matchMinute":"85'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":128,"sport":"football","stage":"League","status":"live","matchType":"individual","venue":"City Ground","location":"Davangere","date":"2026-04-14","startTime":"04:00 PM","teamA":{"name":"Central FC","goals":1},"teamB":{"name":"Davangere Dynamos","goals":1},"matchMinute":"48'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":129,"sport":"football","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Mangalore Stadium","location":"Mangaluru","date":"2026-04-15","startTime":"06:30 PM","teamA":{"name":"Mangalore Mariners","goals":2},"teamB":{"name":"Mysuru Tigers","goals":0},"matchMinute":"72'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":130,"sport":"football","stage":"League","status":"live","matchType":"individual","venue":"Community Ground","location":"Hassan","date":"2026-04-15","startTime":"03:30 PM","teamA":{"name":"Hassan United","goals":0},"teamB":{"name":"Village Rangers","goals":0},"matchMinute":"33'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":131,"sport":"football","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Kanteerava Stadium","location":"Bengaluru","date":"2026-04-16","startTime":"05:00 PM","teamA":{"name":"Bangalore FC","goals":1},"teamB":{"name":"Belgaum Knights","goals":0},"matchMinute":"58'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":132,"sport":"football","stage":"Knockout","status":"live","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Gachibowli Stadium","location":"Hyderabad","date":"2026-04-16","startTime":"07:30 PM","teamA":{"name":"Hyderabad City","goals":1},"teamB":{"name":"Chennai Superstars","goals":1},"matchMinute":"66'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":133,"sport":"football","stage":"League","status":"live","matchType":"individual","venue":"Town Ground","location":"Sirsi","date":"2026-04-17","startTime":"04:00 PM","teamA":{"name":"Sirsi Strikers","goals":2},"teamB":{"name":"Local Stars","goals":1},"matchMinute":"75'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":134,"sport":"football","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Nehru Stadium","location":"Mysuru","date":"2026-04-17","startTime":"06:00 PM","teamA":{"name":"Mysuru Tigers","goals":3},"teamB":{"name":"Hubli Warriors","goals":2},"matchMinute":"81'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":135,"sport":"football","stage":"League","status":"live","matchType":"individual","venue":"District Stadium","location":"Udupi","date":"2026-04-18","startTime":"03:00 PM","teamA":{"name":"Coastal FC","goals":1},"teamB":{"name":"Udupi United","goals":1},"matchMinute":"49'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":136,"sport":"football","stage":"Knockout","status":"live","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Jawaharlal Nehru Stadium","location":"Chennai","date":"2026-04-18","startTime":"08:00 PM","teamA":{"name":"Chennai Superstars","goals":2},"teamB":{"name":"Hyderabad City","goals":2},"matchMinute":"88'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":137,"sport":"football","stage":"League","status":"live","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Tilak Maidan","location":"Belgaum","date":"2026-04-19","startTime":"05:00 PM","teamA":{"name":"Belgaum Knights","goals":1},"teamB":{"name":"Mangalore Mariners","goals":1},"matchMinute":"60'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":138,"sport":"football","stage":"League","status":"live","matchType":"individual","venue":"City Ground","location":"Davangere","date":"2026-04-19","startTime":"04:00 PM","teamA":{"name":"Central FC","goals":0},"teamB":{"name":"Davangere Dynamos","goals":1},"matchMinute":"42'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":139,"sport":"football","stage":"Final Stage","status":"live","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Kanteerava Stadium","location":"Bengaluru","date":"2026-04-20","startTime":"07:00 PM","teamA":{"name":"Bangalore FC","goals":2},"teamB":{"name":"Chennai United","goals":2},"matchMinute":"73'","extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":140,"sport":"football","stage":"League","status":"live","matchType":"individual","venue":"Community Ground","location":"Hassan","date":"2026-04-20","startTime":"03:30 PM","teamA":{"name":"Hassan United","goals":1},"teamB":{"name":"Village Rangers","goals":0},"matchMinute":"55'","extraTime":null,"liveInfo":null,"result":null},
+{"id":141,"sport":"football","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Kanteerava Stadium","location":"Bengaluru","date":"2026-03-20","startTime":"04:00 PM","teamA":{"name":"Bangalore FC","goals":3},"teamB":{"name":"Chennai United","goals":1},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Bangalore FC","winBy":"3-1"}}
+
+,
+{"id":142,"sport":"football","stage":"League","status":"finished","matchType":"individual","venue":"Town Ground","location":"Sirsi","date":"2026-03-21","startTime":"03:00 PM","teamA":{"name":"Local Strikers","goals":2},"teamB":{"name":"Village FC","goals":0},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Local Strikers","winBy":"2-0"}}
+
+,
+{"id":143,"sport":"football","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Gachibowli Stadium","location":"Hyderabad","date":"2026-03-22","startTime":"07:00 PM","teamA":{"name":"Hyderabad City","goals":2},"teamB":{"name":"Vizag Blues","goals":1},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Hyderabad City","winBy":"2-1"}}
+
+,
+{"id":144,"sport":"football","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Nehru Stadium","location":"Mysuru","date":"2026-03-23","startTime":"06:00 PM","teamA":{"name":"Mysuru Tigers","goals":1},"teamB":{"name":"Hubli Warriors","goals":1},"matchMinute":null,"extraTime":"Penalties","liveInfo":null,"result":{"winner":"Hubli Warriors","winBy":"4-3 (Pen)"}}
+
+,
+{"id":145,"sport":"football","stage":"League","status":"finished","matchType":"individual","venue":"District Stadium","location":"Udupi","date":"2026-03-24","startTime":"02:30 PM","teamA":{"name":"Coastal FC","goals":0},"teamB":{"name":"Udupi United","goals":2},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Udupi United","winBy":"2-0"}}
+
+,
+{"id":146,"sport":"football","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Jawaharlal Nehru Stadium","location":"Chennai","date":"2026-03-25","startTime":"08:00 PM","teamA":{"name":"Chennai Superstars","goals":3},"teamB":{"name":"Bangalore FC","goals":2},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Chennai Superstars","winBy":"3-2"}}
+
+,
+{"id":147,"sport":"football","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Tilak Maidan","location":"Belgaum","date":"2026-03-26","startTime":"05:00 PM","teamA":{"name":"Belgaum Knights","goals":1},"teamB":{"name":"Mangalore Mariners","goals":0},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Belgaum Knights","winBy":"1-0"}}
+
+,
+{"id":148,"sport":"football","stage":"League","status":"finished","matchType":"individual","venue":"City Ground","location":"Davangere","date":"2026-03-27","startTime":"04:00 PM","teamA":{"name":"Central FC","goals":2},"teamB":{"name":"Davangere Dynamos","goals":2},"matchMinute":null,"extraTime":"Extra Time","liveInfo":null,"result":{"winner":"Central FC","winBy":"3-2 (AET)"}}
+
+,
+{"id":149,"sport":"football","stage":"Final Stage","status":"finished","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Kanteerava Stadium","location":"Bengaluru","date":"2026-03-28","startTime":"07:00 PM","teamA":{"name":"Bangalore FC","goals":2},"teamB":{"name":"Chennai United","goals":2},"matchMinute":null,"extraTime":"Penalties","liveInfo":null,"result":{"winner":"Bangalore FC","winBy":"5-4 (Pen)"}}
+
+,
+{"id":150,"sport":"football","stage":"League","status":"finished","matchType":"individual","venue":"Community Ground","location":"Hassan","date":"2026-03-29","startTime":"03:30 PM","teamA":{"name":"Hassan United","goals":1},"teamB":{"name":"Village Rangers","goals":0},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Hassan United","winBy":"1-0"}}
+
+,
+{"id":151,"sport":"football","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Nehru Stadium","location":"Mysuru","date":"2026-03-30","startTime":"06:00 PM","teamA":{"name":"Mysuru Tigers","goals":3},"teamB":{"name":"Belgaum Knights","goals":2},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Mysuru Tigers","winBy":"3-2"}}
+
+,
+{"id":152,"sport":"football","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Gachibowli Stadium","location":"Hyderabad","date":"2026-03-31","startTime":"07:30 PM","teamA":{"name":"Hyderabad City","goals":1},"teamB":{"name":"Chennai Superstars","goals":0},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Hyderabad City","winBy":"1-0"}}
+
+,
+{"id":153,"sport":"football","stage":"League","status":"finished","matchType":"individual","venue":"Town Ground","location":"Sirsi","date":"2026-04-01","startTime":"04:00 PM","teamA":{"name":"Sirsi Strikers","goals":2},"teamB":{"name":"Local Stars","goals":1},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Sirsi Strikers","winBy":"2-1"}}
+
+,
+{"id":154,"sport":"football","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Mangalore Stadium","location":"Mangaluru","date":"2026-04-02","startTime":"06:30 PM","teamA":{"name":"Mangalore Mariners","goals":1},"teamB":{"name":"Hubli Warriors","goals":1},"matchMinute":null,"extraTime":"Penalties","liveInfo":null,"result":{"winner":"Hubli Warriors","winBy":"4-2 (Pen)"}}
+
+,
+{"id":155,"sport":"football","stage":"League","status":"finished","matchType":"individual","venue":"District Stadium","location":"Udupi","date":"2026-04-03","startTime":"02:30 PM","teamA":{"name":"Coastal FC","goals":3},"teamB":{"name":"Udupi United","goals":2},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Coastal FC","winBy":"3-2"}}
+
+,
+{"id":156,"sport":"football","stage":"Knockout","status":"finished","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Jawaharlal Nehru Stadium","location":"Chennai","date":"2026-04-04","startTime":"08:00 PM","teamA":{"name":"Chennai Superstars","goals":2},"teamB":{"name":"Hyderabad City","goals":1},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Chennai Superstars","winBy":"2-1"}}
+
+,
+{"id":157,"sport":"football","stage":"League","status":"finished","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Tilak Maidan","location":"Belgaum","date":"2026-04-05","startTime":"05:00 PM","teamA":{"name":"Belgaum Knights","goals":0},"teamB":{"name":"Bangalore FC","goals":2},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Bangalore FC","winBy":"2-0"}}
+
+,
+{"id":158,"sport":"football","stage":"League","status":"finished","matchType":"individual","venue":"City Ground","location":"Davangere","date":"2026-04-06","startTime":"04:00 PM","teamA":{"name":"Central FC","goals":1},"teamB":{"name":"Davangere Dynamos","goals":0},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Central FC","winBy":"1-0"}}
+
+,
+{"id":159,"sport":"football","stage":"Final Stage","status":"finished","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Kanteerava Stadium","location":"Bengaluru","date":"2026-04-07","startTime":"07:00 PM","teamA":{"name":"Bangalore FC","goals":4},"teamB":{"name":"Mysuru Tigers","goals":2},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":{"winner":"Bangalore FC","winBy":"4-2"}}
+
+,
+{"id":160,"sport":"football","stage":"League","status":"finished","matchType":"individual","venue":"Community Ground","location":"Hassan","date":"2026-04-08","startTime":"03:30 PM","teamA":{"name":"Hassan United","goals":2},"teamB":{"name":"Village Rangers","goals":2},"matchMinute":null,"extraTime":"Extra Time","liveInfo":null,"result":{"winner":"Hassan United","winBy":"3-2 (AET)"}}
+,
+{"id":161,"sport":"football","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Kanteerava Stadium","location":"Bengaluru","date":"2026-04-12","startTime":"04:00 PM","teamA":{"name":"Bangalore FC"},"teamB":{"name":"Chennai United"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":162,"sport":"football","stage":"League","status":"upcoming","matchType":"individual","venue":"Town Ground","location":"Sirsi","date":"2026-04-12","startTime":"03:00 PM","teamA":{"name":"Local Strikers"},"teamB":{"name":"Village FC"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":163,"sport":"football","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Gachibowli Stadium","location":"Hyderabad","date":"2026-04-13","startTime":"07:00 PM","teamA":{"name":"Hyderabad City"},"teamB":{"name":"Vizag Blues"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":164,"sport":"football","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Nehru Stadium","location":"Mysuru","date":"2026-04-13","startTime":"06:00 PM","teamA":{"name":"Mysuru Tigers"},"teamB":{"name":"Hubli Warriors"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":165,"sport":"football","stage":"League","status":"upcoming","matchType":"individual","venue":"District Stadium","location":"Udupi","date":"2026-04-14","startTime":"02:30 PM","teamA":{"name":"Coastal FC"},"teamB":{"name":"Udupi United"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":166,"sport":"football","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Jawaharlal Nehru Stadium","location":"Chennai","date":"2026-04-14","startTime":"08:00 PM","teamA":{"name":"Chennai Superstars"},"teamB":{"name":"Bangalore FC"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":167,"sport":"football","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Tilak Maidan","location":"Belgaum","date":"2026-04-15","startTime":"05:00 PM","teamA":{"name":"Belgaum Knights"},"teamB":{"name":"Mangalore Mariners"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":168,"sport":"football","stage":"League","status":"upcoming","matchType":"individual","venue":"City Ground","location":"Davangere","date":"2026-04-15","startTime":"04:00 PM","teamA":{"name":"Central FC"},"teamB":{"name":"Davangere Dynamos"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":169,"sport":"football","stage":"Final Stage","status":"upcoming","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Kanteerava Stadium","location":"Bengaluru","date":"2026-04-16","startTime":"07:00 PM","teamA":{"name":"Bangalore FC"},"teamB":{"name":"Mysuru Tigers"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":170,"sport":"football","stage":"League","status":"upcoming","matchType":"individual","venue":"Community Ground","location":"Hassan","date":"2026-04-16","startTime":"03:30 PM","teamA":{"name":"Hassan United"},"teamB":{"name":"Village Rangers"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":171,"sport":"football","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Mangalore Stadium","location":"Mangaluru","date":"2026-04-17","startTime":"06:30 PM","teamA":{"name":"Mangalore Mariners"},"teamB":{"name":"Chennai United"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":172,"sport":"football","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Gachibowli Stadium","location":"Hyderabad","date":"2026-04-17","startTime":"07:30 PM","teamA":{"name":"Hyderabad City"},"teamB":{"name":"Belgaum Knights"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":173,"sport":"football","stage":"League","status":"upcoming","matchType":"individual","venue":"Town Ground","location":"Sirsi","date":"2026-04-18","startTime":"04:00 PM","teamA":{"name":"Sirsi Strikers"},"teamB":{"name":"Local Stars"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":174,"sport":"football","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Nehru Stadium","location":"Mysuru","date":"2026-04-18","startTime":"06:00 PM","teamA":{"name":"Mysuru Tigers"},"teamB":{"name":"Bangalore FC"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":175,"sport":"football","stage":"League","status":"upcoming","matchType":"individual","venue":"District Stadium","location":"Udupi","date":"2026-04-19","startTime":"02:30 PM","teamA":{"name":"Coastal FC"},"teamB":{"name":"Village Rangers"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":176,"sport":"football","stage":"Knockout","status":"upcoming","matchType":"tournament","tournamentName":"National Football Cup 2026","venue":"Jawaharlal Nehru Stadium","location":"Chennai","date":"2026-04-19","startTime":"08:00 PM","teamA":{"name":"Chennai Superstars"},"teamB":{"name":"Hyderabad City"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":177,"sport":"football","stage":"League","status":"upcoming","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Tilak Maidan","location":"Belgaum","date":"2026-04-20","startTime":"05:00 PM","teamA":{"name":"Belgaum Knights"},"teamB":{"name":"Mysuru Tigers"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":178,"sport":"football","stage":"League","status":"upcoming","matchType":"individual","venue":"City Ground","location":"Davangere","date":"2026-04-20","startTime":"04:00 PM","teamA":{"name":"Central FC"},"teamB":{"name":"Village Rangers"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":179,"sport":"football","stage":"Final Stage","status":"upcoming","matchType":"tournament","tournamentName":"South India Football League 2026","venue":"Kanteerava Stadium","location":"Bengaluru","date":"2026-04-21","startTime":"07:00 PM","teamA":{"name":"Bangalore FC"},"teamB":{"name":"Hyderabad City"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+
+,
+{"id":180,"sport":"football","stage":"League","status":"upcoming","matchType":"individual","venue":"Community Ground","location":"Hassan","date":"2026-04-21","startTime":"03:30 PM","teamA":{"name":"Hassan United"},"teamB":{"name":"Local Stars"},"matchMinute":null,"extraTime":null,"liveInfo":null,"result":null}
+]
