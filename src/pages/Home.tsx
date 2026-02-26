@@ -1,8 +1,12 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import RevealFade from "../components/RevealFade";
 import SportCard from "../components/SportCard";
 import FeatureCard from "../components/FeatureCard";
 import StatCard from "../components/StatCard";
 import TestimonialSlider from "../components/TestimonialSlider";
+import { tournamentsApi, type Tournament } from "../lib/api";
+
 /* ================= Types ================= */
 
 interface Feature {
@@ -10,10 +14,44 @@ interface Feature {
   desc: string;
 }
 
+const STATUS_BADGE: Record<string, string> = {
+  ongoing: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+  open:    'bg-blue-500/20 text-blue-400 border-blue-500/30',
+  draft:   'bg-gray-500/20 text-gray-400 border-gray-500/30',
+  completed: 'bg-gray-700/40 text-gray-500 border-gray-600/30',
+  cancelled: 'bg-red-500/20 text-red-400 border-red-500/30',
+};
+
+const SPORT_EMOJI: Record<string, string> = {
+  cricket: '🏏',
+  football: '⚽',
+  volleyball: '🏐',
+};
+
 
 /* ================= Home ================= */
 
 export default function Home() {
+  const navigate = useNavigate();
+  const [tournaments, setTournaments] = useState<Tournament[]>([]);
+  const [tourLoading, setTourLoading] = useState(true);
+
+  useEffect(() => {
+    Promise.all([
+      tournamentsApi.list({ status: 'open', limit: 10 }),
+      tournamentsApi.list({ status: 'ongoing', limit: 10 }),
+      tournamentsApi.list({ status: 'draft', limit: 10 }),
+    ])
+      .then(([open, ongoing, draft]) => {
+        // merge and dedupe by id, prioritise ongoing > open > draft
+        const merged = [...ongoing, ...open, ...draft];
+        const seen = new Set<string>();
+        setTournaments(merged.filter(t => seen.has(t.id) ? false : seen.add(t.id) && true));
+      })
+      .catch(() => setTournaments([]))
+      .finally(() => setTourLoading(false));
+  }, []);
+
   const features: Feature[] = [
       { title: "Live Match Tracking", desc: "Real-time scores and player stats instantly." },
       { title: "Advanced Analytics", desc: "Deep performance breakdowns for teams and players." },
@@ -38,6 +76,71 @@ export default function Home() {
           <SportCard name="Football" image="/images/card-soccer.jpg" sportId="football" />
           <SportCard name="Volleyball" image="/images/card-vollyball.jpg" sportId="volleyball" />
         </div>
+      </section>
+
+      {/* ================= Tournaments ================= */}
+      <section className="max-w-7xl mx-auto px-6 pb-24">
+        <RevealFade>
+          <h2 className="text-3xl font-bold text-center mb-10 text-gray-900 dark:text-white">
+            Active <span className="logo-gradient-text">Tournaments</span>
+          </h2>
+        </RevealFade>
+
+        {tourLoading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3].map(i => (
+              <div key={i} className="h-32 rounded-2xl bg-gray-100 dark:bg-gray-800 animate-pulse" />
+            ))}
+          </div>
+        ) : tournaments.length === 0 ? (
+          <div className="text-center py-16">
+            <p className="text-5xl mb-4">🏆</p>
+            <p className="text-gray-500 dark:text-gray-400">No active tournaments yet. Be the first to create one!</p>
+            <button
+              onClick={() => navigate('/login')}
+              className="mt-6 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold text-sm"
+            >
+              Get Started
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tournaments.map(t => (
+              <RevealFade key={t.id}>
+                <div
+                  onClick={() => navigate(`/join/${t.inviteCode}`)}
+                  className="cursor-pointer bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-emerald-400 dark:hover:border-emerald-500 transition-colors"
+                >
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <div className="flex-1 min-w-0">
+                      <span className="text-xl mr-2">{SPORT_EMOJI[t.sportType] || '🏅'}</span>
+                      <span className="text-gray-900 dark:text-white font-semibold text-sm">{t.name}</span>
+                    </div>
+                    <span className={`shrink-0 text-xs px-2 py-0.5 rounded-full border ${STATUS_BADGE[t.status] || STATUS_BADGE.draft}`}>
+                      {t.status}
+                    </span>
+                  </div>
+
+                  {t.description && (
+                    <p className="text-gray-500 text-xs mb-3 line-clamp-2">{t.description}</p>
+                  )}
+
+                  <div className="flex flex-wrap gap-3 text-xs text-gray-500 dark:text-gray-400">
+                    {t.city && <span>📍 {t.city}</span>}
+                    <span>👥 {t.currentTeams}/{t.maxTeams} teams</span>
+                    <span>📅 {new Date(t.startDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                  </div>
+
+                  {t.creator && (
+                    <p className="text-xs text-gray-400 dark:text-gray-600 mt-3">
+                      by {t.creator.fullName}
+                    </p>
+                  )}
+                </div>
+              </RevealFade>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* ================= Why PlayStats ================= */}

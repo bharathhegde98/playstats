@@ -64,6 +64,7 @@ function EmptyState({ message }: { message: string }) {
 
 export default function Dashboard() {
   const { selectedSport, setSport } = useSport();
+  const [upcoming, setUpcoming] = useState<Tournament[]>([]);
   const [live, setLive] = useState<Tournament[]>([]);
   const [history, setHistory] = useState<Tournament[]>([]);
   const [loading, setLoading] = useState(true);
@@ -78,10 +79,13 @@ export default function Dashboard() {
     setLoading(true);
     setError('');
     Promise.all([
+      tournamentsApi.list({ sport, status: 'draft' }),
+      tournamentsApi.list({ sport, status: 'open' }),
       tournamentsApi.list({ sport, status: 'ongoing' }),
       tournamentsApi.list({ sport, status: 'completed' }),
     ])
-      .then(([liveData, historyData]) => {
+      .then(([draftData, openData, liveData, historyData]) => {
+        setUpcoming([...draftData, ...openData]);
         setLive(liveData);
         setHistory(historyData);
       })
@@ -134,6 +138,21 @@ export default function Dashboard() {
           </div>
         ) : (
           <>
+            {/* Open & Upcoming */}
+            <section>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-2 h-2 bg-blue-400 rounded-full" />
+                <h2 className="text-white font-semibold text-sm">Open & Upcoming</h2>
+              </div>
+              {upcoming.length > 0 ? (
+                <div className="space-y-3">
+                  {upcoming.map((t) => <TournamentCard key={t.id} t={t} />)}
+                </div>
+              ) : (
+                <EmptyState message="No upcoming tournaments" />
+              )}
+            </section>
+
             {/* Live Now */}
             <section>
               <div className="flex items-center gap-2 mb-3">
