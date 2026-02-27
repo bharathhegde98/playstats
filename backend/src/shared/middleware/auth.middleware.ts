@@ -1,7 +1,10 @@
 import { Context, Next } from 'hono';
+import { eq } from 'drizzle-orm';
 import { supabaseAdmin } from '../utils/supabase.client';
 import { UnauthorizedError } from '../utils/errors';
 import { logger } from '../utils/logger';
+import { db } from '../../db/client';
+import { users } from '../../db/schema';
 
 export interface AuthContext {
   userId: string;
@@ -31,11 +34,22 @@ export const authMiddleware = async (c: Context, next: Next) => {
       throw new UnauthorizedError('Invalid or expired token');
     }
 
-    // Attach user info to context
+    // Resolve local user id from authUserId (Supabase UUID != local users.id)
+    const localUser = await db.query.users.findFirst({
+      where: eq(users.authUserId, user.id),
+      columns: { id: true, role: true },
+    });
+
+    if (!localUser) {
+      logger.warn('Local user not found for authUserId', { authUserId: user.id });
+      throw new UnauthorizedError('User account not found');
+    }
+
+    // Attach local user info to context
     c.set('auth', {
-      userId: user.id,
+      userId: localUser.id,
       email: user.email,
-      role: user.user_metadata?.role || 'user',
+      role: localUser.role,
     } as AuthContext);
 
     await next();
@@ -61,11 +75,18 @@ export const optionalAuthMiddleware = async (c: Context, next: Next) => {
       } = await supabaseAdmin.auth.getUser(token);
 
       if (user) {
-        c.set('auth', {
-          userId: user.id,
-          email: user.email,
-          role: user.user_metadata?.role || 'user',
-        } as AuthContext);
+        const localUser = await db.query.users.findFirst({
+          where: eq(users.authUserId, user.id),
+          columns: { id: true, role: true },
+        });
+
+        if (localUser) {
+          c.set('auth', {
+            userId: localUser.id,
+            email: user.email,
+            role: localUser.role,
+          } as AuthContext);
+        }
       }
     }
   } catch (error) {

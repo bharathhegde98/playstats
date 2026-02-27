@@ -1,7 +1,7 @@
 import { and, eq, desc } from 'drizzle-orm';
 import { nanoid } from 'nanoid';
 import { db } from '../../db/client';
-import { tournaments } from '../../db/schema';
+import { tournaments, tournamentAdmins } from '../../db/schema';
 import { NotFoundError, DatabaseError } from '../../shared/utils/errors';
 import { logger } from '../../shared/utils/logger';
 import type { CreateTournamentInput, ListTournamentsInput } from './tournaments.schema';
@@ -49,29 +49,42 @@ export class TournamentsService {
       const inviteCode = nanoid(8);
       const inviteLink = `/join/${inviteCode}`;
 
-      const [tournament] = await db
-        .insert(tournaments)
-        .values({
-          name: input.name,
-          slug,
-          description: input.description,
-          sportType: input.sportType,
-          maxTeams: input.maxTeams ?? 16,
-          minPlayersPerTeam: input.minPlayersPerTeam ?? 11,
-          maxPlayersPerTeam: input.maxPlayersPerTeam ?? 15,
-          startDate: new Date(input.startDate),
-          endDate: input.endDate ? new Date(input.endDate) : undefined,
-          venue: input.venue,
-          city: input.city,
-          country: input.country,
-          allowPublicJoin: input.allowPublicJoin ?? true,
-          inviteCode,
-          inviteLink,
-          status: 'draft',
-          createdBy: userId,
-          currentTeams: 0,
-        })
-        .returning();
+      const tournament = await db.transaction(async (tx) => {
+        const [newTournament] = await tx
+          .insert(tournaments)
+          .values({
+            name: input.name,
+            slug,
+            description: input.description,
+            sportType: input.sportType,
+            maxTeams: input.maxTeams ?? 16,
+            minPlayersPerTeam: input.minPlayersPerTeam ?? 11,
+            maxPlayersPerTeam: input.maxPlayersPerTeam ?? 15,
+            startDate: new Date(input.startDate),
+            endDate: input.endDate ? new Date(input.endDate) : undefined,
+            venue: input.venue,
+            city: input.city,
+            country: input.country,
+            allowPublicJoin: input.allowPublicJoin ?? true,
+            inviteCode,
+            inviteLink,
+            status: 'draft',
+            createdBy: userId,
+            currentTeams: 0,
+          })
+          .returning();
+
+        // Auto-add creator as admin with 'creator' role
+        await tx.insert(tournamentAdmins).values({
+          tournamentId: newTournament.id,
+          userId,
+          role: 'creator',
+          addedBy: userId,
+          permissions: { all: true },
+        });
+
+        return newTournament;
+      });
 
       logger.info('Tournament created', { tournamentId: tournament.id, userId });
       return tournament;
