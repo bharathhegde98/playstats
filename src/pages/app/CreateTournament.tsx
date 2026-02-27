@@ -1,272 +1,445 @@
-import { useState, FormEvent } from 'react';
-import { useSport } from '../../contexts/SportContext';
-import { tournamentsApi, type Tournament, type Sport } from '../../lib/api';
+import { useState } from "react";
+import { useSport } from "../../contexts/SportContext";
+import { tournamentsApi } from "../../lib/api";
 
-const SPORT_META: Record<Sport, { emoji: string; label: string }> = {
-  cricket: { emoji: '🏏', label: 'Cricket' },
-  football: { emoji: '⚽', label: 'Football' },
-  volleyball: { emoji: '🏐', label: 'Volleyball' },
-};
+export default function CreateEvent() {
+  const { selectedSport } = useSport();
+  const sport = selectedSport!;
 
-const DEFAULTS: Record<Sport, { min: number; max: number }> = {
-  cricket: { min: 11, max: 15 },
-  football: { min: 11, max: 18 },
-  volleyball: { min: 6, max: 12 },
-};
+  const [form, setForm] = useState({
+    eventType: "",
 
-export default function CreateTournament() {
-    const { selectedSport } = useSport();
-    const sport = selectedSport!;
-    const meta = SPORT_META[sport];
-    const defaults = DEFAULTS[sport];
+    // Tournament
+    name: "",
+    tournamentImage: "",
+    rulesFile: "",
+    organizerName: "",
+    organizerEmail: "",
+    organizerMobile: "",
+    startDate: "",
+    endDate: "",
+    category: "open",
+    maxTeamsAllowed: 8,
+    minPlayersPerTeam: 6,
+    maxPlayersPerTeam: 12,
+    venueName: "",
+    venueLocation: "",
 
-    const [form, setForm] = useState({
-        name: '',
-        description: '',
-        sportType: sport,
-        maxTeams: 8,
-        minPlayersPerTeam: defaults.min,
-        maxPlayersPerTeam: defaults.max,
-        startDate: '',
-        endDate: '',
-        venue: '',
-        city: '',
-        country: 'India',
-        allowPublicJoin: true,
-    });
+    // Sport specific
+    cricketType: "",
+    cricketMatchType: "",
+    pitchType: "",
+    footballMatchType: "",
+    surfaceType: "",
+    volleyballMatchType: "",
+    courtType: "",
 
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
-    const [created, setCreated] = useState<Tournament | null>(null);
-    const [copied, setCopied] = useState(false);
+    // Individual
+    matchDate: "",
+    matchTime: ""
+  });
 
-    const set = (field: string) => (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-    ) => setForm((f) => ({ ...f, [field]: e.target.value }));
+  const inputStyle =
+    "w-full rounded-xl px-4 py-3 text-sm bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition";
 
-    const handleSubmit = async (e: FormEvent) => {
-        e.preventDefault();
-        setError('');
-        setLoading(true);
-        try {
-        const result = await tournamentsApi.create({
-            ...form,
-            sportType: sport,
-            maxTeams: Number(form.maxTeams),
-            minPlayersPerTeam: Number(form.minPlayersPerTeam),
-            maxPlayersPerTeam: Number(form.maxPlayersPerTeam),
-            endDate: form.endDate || undefined,
-            venue: form.venue || undefined,
-            city: form.city || undefined,
-            country: form.country || undefined,
-            description: form.description || undefined,
-        });
-        setCreated(result);
-        } catch (err: any) {
-        setError(err.message || 'Failed to create tournament');
-        } finally {
-        setLoading(false);
-        }
-    };
+  const set = (field: string) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+      setForm(f => ({ ...f, [field]: e.target.value }));
 
-    const inviteUrl = created?.inviteCode
-        ? `${window.location.origin}/join/${created.inviteCode}`
-        : '';
+  const uploadFile = async (file: File, field: string) => {
+    const data = new FormData();
+    data.append("file", file);
+    const res = await fetch("/api/upload", { method: "POST", body: data });
+    const result = await res.json();
+    setForm(f => ({ ...f, [field]: result.url }));
+  };
 
-    const copyLink = () => {
-        navigator.clipboard.writeText(inviteUrl).then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-        });
-    };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await tournamentsApi.create({ ...form, sportType: sport });
+    alert("Created successfully");
+  };
 
-    if (created) {
-        return (
-            <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center px-5">
-                <div className="w-full max-w-sm text-center">
-                    <div className="text-6xl mb-4">🎉</div>
-                    <h2 className="text-white text-xl font-bold">{created.name}</h2>
-                    <p className="text-gray-400 text-sm mt-1">Tournament created successfully</p>
+  return (
+    <div className="min-h-screen section-base flex items-center justify-center px-5">
+      <section className="w-full max-w-2xl section-elevated rounded-2xl p-8 shadow">
 
-                    <div className="mt-8 bg-gray-900 border border-gray-800 rounded-2xl p-4">
-                        <p className="text-gray-400 text-xs mb-2">Share this invite link</p>
-                        <p className="text-emerald-400 text-sm font-mono break-all">{inviteUrl}</p>
+        <h1 className="text-xl font-semibold text-center mb-6">
+          Create {sport.toUpperCase()} Event
+        </h1>
 
-                        <button
-                        onClick={copyLink}
-                        className={`mt-3 w-full py-3 rounded-xl font-semibold text-sm transition-all ${
-                            copied
-                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                            : 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-gray-950'
-                        }`}
-                        >
-                        {copied ? '✓ Copied!' : 'Copy Invite Link'}
-                        </button>
+        <form onSubmit={handleSubmit} className="space-y-6">
+
+          {/* Event Type */}
+          <div>
+            <label className="block text-base font-semibold text-gray-700 dark:text-gray-300 mb-2">
+              Event Type
+            </label>
+            <select value={form.eventType} onChange={set("eventType")} className={inputStyle}>
+              <option value="">Select Event Type</option>
+              <option value="individual">Individual Match</option>
+              <option value="tournament">Tournament</option>
+            </select>
+          </div>
+
+          {/* ================= INDIVIDUAL ================= */}
+          {form.eventType === "individual" && (
+            <>
+                <div className="grid grid-cols-2 gap-4">
+                    <div>
+                    <label className="block font-semibold mb-2">Match Date</label>
+                    <input
+                        type="date"
+                        value={form.matchDate}
+                        onChange={set("matchDate")}
+                        className={inputStyle}
+                    />
                     </div>
 
-                    <button
-                        onClick={() => { setCreated(null); setForm(f => ({ ...f, name: '', description: '' })); }}
-                        className="mt-4 text-gray-500 text-sm"
-                    >
-                        Create another tournament
-                    </button>
+                    <div>
+                    <label className="block font-semibold mb-2">Start Time</label>
+                    <input
+                        type="time"
+                        value={form.matchTime}
+                        onChange={set("matchTime")}
+                        className={inputStyle}
+                    />
+                    </div>
                 </div>
-            </div>
-        );
-    }
 
-    return (
-        <div className="min-h-screen bg-gray-950">
-            {/* Header */}
-            <div className="sticky top-0 z-10 bg-gray-950/95 backdrop-blur border-b border-gray-900 px-5 pt-12 pb-4">
-                <p className="text-gray-500 text-xs">New Tournament</p>
-                <h1 className="text-white text-xl font-bold">
-                {meta.emoji} {meta.label} Tournament
-                </h1>
-            </div>
-
-            <form onSubmit={handleSubmit} className="px-5 py-5 space-y-5 pb-10">
-                {/* Name */}
-                <div>
-                    <label className="block text-sm text-gray-400 mb-1.5">Tournament Name *</label>
+                <div className="grid grid-cols-2 gap-4">
+                    <div>
+                    <label className="block font-semibold mb-2">Venue</label>
                     <input
                         type="text"
-                        required
-                        value={form.name}
-                        onChange={set('name')}
-                        placeholder="e.g. Summer Cricket League 2025"
-                        className="w-full bg-gray-900 border border-gray-800 text-white rounded-xl px-4 py-3 text-sm outline-none focus:border-emerald-500 transition-colors"
+                        value={form.venueName}
+                        onChange={set("venueName")}
+                        className={inputStyle}
                     />
-                </div>
+                    </div>
 
-                {/* Description */}
-                <div>
-                    <label className="block text-sm text-gray-400 mb-1.5">Description</label>
-                    <textarea
-                        value={form.description}
-                        onChange={(e) => setForm(f => ({ ...f, description: e.target.value }))}
-                        placeholder="Brief description of the tournament..."
-                        rows={2}
-                        className="w-full bg-gray-900 border border-gray-800 text-white rounded-xl px-4 py-3 text-sm outline-none focus:border-emerald-500 transition-colors resize-none"
+                    <div>
+                    <label className="block font-semibold mb-2">Location</label>
+                    <input
+                        type="text"
+                        value={form.venueLocation}
+                        onChange={set("venueLocation")}
+                        className={inputStyle}
                     />
-                </div>
-
-                {/* Dates */}
-                <div className="grid grid-cols-2 gap-3">
-                    <div>
-                        <label className="block text-sm text-gray-400 mb-1.5">Start Date *</label>
-                        <input
-                        type="date"
-                        required
-                        value={form.startDate}
-                        onChange={set('startDate')}
-                        className="w-full bg-gray-900 border border-gray-800 text-white rounded-xl px-4 py-3 text-sm outline-none focus:border-emerald-500 transition-colors"
-                        />
-                    </div>
-                    <div>
-                        <label className="block text-sm text-gray-400 mb-1.5">End Date</label>
-                        <input
-                        type="date"
-                        value={form.endDate}
-                        onChange={set('endDate')}
-                        className="w-full bg-gray-900 border border-gray-800 text-white rounded-xl px-4 py-3 text-sm outline-none focus:border-emerald-500 transition-colors"
-                        />
                     </div>
                 </div>
 
-                {/* Teams */}
-                <div>
-                <label className="block text-sm text-gray-400 mb-1.5">Max Teams</label>
-                    <select
-                        value={form.maxTeams}
-                        onChange={set('maxTeams')}
-                        className="w-full bg-gray-900 border border-gray-800 text-white rounded-xl px-4 py-3 text-sm outline-none focus:border-emerald-500 transition-colors"
-                    >
-                        {[2, 4, 8, 16, 32].map(n => (
-                        <option key={n} value={n}>{n} teams</option>
-                        ))}
-                    </select>
-                </div>
+                {/* SPORT SPECIFIC FOR INDIVIDUAL */}
 
-                {/* Players per team */}
-                <div className="grid grid-cols-2 gap-3">
+                {sport === "cricket" && (
+                    <div className="grid grid-cols-3 gap-4">
                     <div>
-                        <label className="block text-sm text-gray-400 mb-1.5">Min Players/Team</label>
-                        <input
-                        type="number"
-                        min={1}
-                        max={30}
-                        value={form.minPlayersPerTeam}
-                        onChange={set('minPlayersPerTeam')}
-                        className="w-full bg-gray-900 border border-gray-800 text-white rounded-xl px-4 py-3 text-sm outline-none focus:border-emerald-500 transition-colors"
-                        />
+                        <label className="block font-semibold mb-2">Cricket Type</label>
+                        <select
+                        value={form.cricketType}
+                        onChange={set("cricketType")}
+                        className={inputStyle}
+                        >
+                        <option value="">Select</option>
+                        <option value="tennis">Tennis Ball</option>
+                        <option value="leather">Leather Ball</option>
+                        </select>
                     </div>
-                    <div>
-                        <label className="block text-sm text-gray-400 mb-1.5">Max Players/Team</label>
-                        <input
-                        type="number"
-                        min={1}
-                        max={30}
-                        value={form.maxPlayersPerTeam}
-                        onChange={set('maxPlayersPerTeam')}
-                        className="w-full bg-gray-900 border border-gray-800 text-white rounded-xl px-4 py-3 text-sm outline-none focus:border-emerald-500 transition-colors"
-                        />
-                    </div>
-                </div>
 
-                {/* Venue */}
-                <div className="grid grid-cols-2 gap-3">
                     <div>
-                        <label className="block text-sm text-gray-400 mb-1.5">Venue</label>
-                        <input
-                        type="text"
-                        value={form.venue}
-                        onChange={set('venue')}
-                        placeholder="Ground name"
-                        className="w-full bg-gray-900 border border-gray-800 text-white rounded-xl px-4 py-3 text-sm outline-none focus:border-emerald-500 transition-colors"
-                        />
+                        <label className="block font-semibold mb-2">Match Type</label>
+                        <select
+                        value={form.cricketMatchType}
+                        onChange={set("cricketMatchType")}
+                        className={inputStyle}
+                        >
+                        <option value="">Select</option>
+                        <option value="limited">Limited Overs</option>
+                        <option value="box">Box Cricket</option>
+                        <option value="test">Test Match</option>
+                        </select>
                     </div>
-                    <div>
-                        <label className="block text-sm text-gray-400 mb-1.5">City</label>
-                        <input
-                        type="text"
-                        value={form.city}
-                        onChange={set('city')}
-                        placeholder="Mumbai"
-                        className="w-full bg-gray-900 border border-gray-800 text-white rounded-xl px-4 py-3 text-sm outline-none focus:border-emerald-500 transition-colors"
-                        />
-                    </div>
-                </div>
 
-                {/* Public join toggle */}
-                <div className="flex items-center justify-between bg-gray-900 border border-gray-800 rounded-xl px-4 py-3">
                     <div>
-                        <p className="text-white text-sm font-medium">Public Join</p>
-                        <p className="text-gray-500 text-xs">Anyone with the link can request to join</p>
+                        <label className="block font-semibold mb-2">Pitch Type</label>
+                        <select
+                        value={form.pitchType}
+                        onChange={set("pitchType")}
+                        className={inputStyle}
+                        >
+                        <option value="">Select</option>
+                        <option value="rough">Rough</option>
+                        <option value="cement">Cement</option>
+                        <option value="turf">Turf</option>
+                        </select>
                     </div>
-                    <button
-                        type="button"
-                        onClick={() => setForm(f => ({ ...f, allowPublicJoin: !f.allowPublicJoin }))}
-                        className={`w-12 h-6 rounded-full transition-colors ${form.allowPublicJoin ? 'bg-emerald-500' : 'bg-gray-700'}`}
-                    >
-                        <span className={`block w-5 h-5 bg-white rounded-full shadow transition-transform mx-0.5 ${form.allowPublicJoin ? 'translate-x-6' : 'translate-x-0'}`} />
-                    </button>
-                </div>
-
-                {error && (
-                    <p className="text-red-400 text-sm bg-red-400/10 border border-red-400/20 rounded-xl px-4 py-3">
-                        {error}
-                    </p>
+                    </div>
                 )}
 
-                <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full py-4 rounded-xl font-semibold bg-gradient-to-r from-emerald-500 to-cyan-500 text-gray-950 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                    {loading ? 'Creating...' : 'Create Tournament'}
-                </button>
-            </form>
-        </div>
-    );
-    }
+                {sport === "football" && (
+                    <div className="grid grid-cols-2 gap-4">
+                    <div>
+                        <label className="block font-semibold mb-2">Match Type</label>
+                        <select
+                        value={form.footballMatchType}
+                        onChange={set("footballMatchType")}
+                        className={inputStyle}
+                        >
+                        <option value="">Select</option>
+                        <option value="5v5">5v5</option>
+                        <option value="7v7">7v7</option>
+                        <option value="11v11">11v11</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block font-semibold mb-2">Surface</label>
+                        <select
+                        value={form.surfaceType}
+                        onChange={set("surfaceType")}
+                        className={inputStyle}
+                        >
+                        <option value="">Select</option>
+                        <option value="turf">Turf</option>
+                        <option value="grass">Grass</option>
+                        </select>
+                    </div>
+                    </div>
+                )}
+
+                {sport === "volleyball" && (
+                    <div className="grid grid-cols-2 gap-4">
+                    <div>
+                        <label className="block font-semibold mb-2">Sets</label>
+                        <select
+                        value={form.volleyballMatchType}
+                        onChange={set("volleyballMatchType")}
+                        className={inputStyle}
+                        >
+                        <option value="">Select</option>
+                        <option value="3_sets">3 Sets</option>
+                        <option value="5_sets">5 Sets</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block font-semibold mb-2">Court Type</label>
+                        <select
+                        value={form.courtType}
+                        onChange={set("courtType")}
+                        className={inputStyle}
+                        >
+                        <option value="">Select</option>
+                        <option value="indoor">Indoor</option>
+                        <option value="outdoor">Outdoor</option>
+                        </select>
+                    </div>
+                    </div>
+                )}
+                </>
+            )}
+
+          {/* ================= TOURNAMENT ================= */}
+          {form.eventType === "tournament" && (
+            <>
+              <div>
+                <label className="block font-semibold mb-2">Tournament Name</label>
+                <input type="text" value={form.name} onChange={set("name")} className={inputStyle} />
+              </div>
+
+              {/* Banner Upload */}
+              <div className="flex justify-center">
+                <div className="relative w-32 h-32">
+                  <div className="w-32 h-32 rounded-2xl border border-gray-300 dark:border-gray-800 overflow-hidden flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+                    {form.tournamentImage ? (
+                      <img src={form.tournamentImage} className="w-full h-full object-cover" />
+                    ) : (
+                      <span className="text-gray-400">Image</span>
+                    )}
+                  </div>
+                  <label className="absolute bottom-2 right-2 bg-emerald-500 p-2 rounded-full cursor-pointer text-white">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) =>
+                        e.target.files && uploadFile(e.target.files[0], "tournamentImage")
+                      }
+                      className="hidden"
+                    />
+                    📷
+                  </label>
+                </div>
+              </div>
+
+              {/* Rules Upload */}
+              <div>
+                <label className="block font-semibold mb-2">Rules & Regulations</label>
+                <div className="border border-dashed border-gray-300 dark:border-gray-700 rounded-xl p-4 text-center">
+                  <input
+                    type="file"
+                    accept=".pdf,image/*"
+                    onChange={(e) =>
+                      e.target.files && uploadFile(e.target.files[0], "rulesFile")
+                    }
+                  />
+                </div>
+              </div>
+
+              {/* Organizer */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-semibold mb-2">Organizer Name</label>
+                  <input type="text" value={form.organizerName} onChange={set("organizerName")} className={inputStyle} />
+                </div>
+                <div>
+                  <label className="block font-semibold mb-2">Organizer Email</label>
+                  <input type="email" value={form.organizerEmail} onChange={set("organizerEmail")} className={inputStyle} />
+                </div>
+              </div>
+
+              <div>
+                <label className="block font-semibold mb-2">Organizer Phone</label>
+                <input type="text" value={form.organizerMobile} onChange={set("organizerMobile")} className={inputStyle} />
+              </div>
+
+              {/* Dates */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-semibold mb-2">Start Date</label>
+                  <input type="date" value={form.startDate} onChange={set("startDate")} className={inputStyle} />
+                </div>
+                <div>
+                  <label className="block font-semibold mb-2">End Date</label>
+                  <input type="date" value={form.endDate} onChange={set("endDate")} className={inputStyle} />
+                </div>
+              </div>
+
+              {/* Category */}
+              <div>
+                <label className="block font-semibold mb-2">Category</label>
+                <select value={form.category} onChange={set("category")} className={inputStyle}>
+                  <option value="open">Open</option>
+                  <option value="corporate">Corporate</option>
+                  <option value="community">Community</option>
+                  <option value="school">School</option>
+                  <option value="college">College</option>
+                  <option value="university">University</option>
+                  <option value="other">Other</option>
+                  <option value="series">Series</option>
+                </select>
+              </div>
+
+              {/* Team Rules */}
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <label className="block font-semibold mb-2">Max Teams</label>
+                  <input type="number" value={form.maxTeamsAllowed} onChange={set("maxTeamsAllowed")} className={inputStyle} />
+                </div>
+                <div>
+                  <label className="block font-semibold mb-2">Min Players</label>
+                  <input type="number" value={form.minPlayersPerTeam} onChange={set("minPlayersPerTeam")} className={inputStyle} />
+                </div>
+                <div>
+                  <label className="block font-semibold mb-2">Max Players</label>
+                  <input type="number" value={form.maxPlayersPerTeam} onChange={set("maxPlayersPerTeam")} className={inputStyle} />
+                </div>
+              </div>
+
+              {/* Venue */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-semibold mb-2">Venue</label>
+                  <input type="text" value={form.venueName} onChange={set("venueName")} className={inputStyle} />
+                </div>
+                <div>
+                  <label className="block font-semibold mb-2">Location</label>
+                  <input type="text" value={form.venueLocation} onChange={set("venueLocation")} className={inputStyle} />
+                </div>
+              </div>
+
+              {/* Sport Specific for Tournament */}
+              {sport === "cricket" && (
+                <div className="grid grid-cols-3 gap-4">
+                  <div>
+                    <label className="block font-semibold mb-2">Cricket Type</label>
+                    <select value={form.cricketType} onChange={set("cricketType")} className={inputStyle}>
+                      <option value="">Select</option>
+                      <option value="tennis">Tennis</option>
+                      <option value="leather">Leather</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block font-semibold mb-2">Match Type</label>
+                    <select value={form.cricketMatchType} onChange={set("cricketMatchType")} className={inputStyle}>
+                      <option value="">Select</option>
+                      <option value="limited">Limited</option>
+                      <option value="box">Box</option>
+                      <option value="test">Test</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block font-semibold mb-2">Pitch Type</label>
+                    <select value={form.pitchType} onChange={set("pitchType")} className={inputStyle}>
+                      <option value="">Select</option>
+                      <option value="rough">Rough</option>
+                      <option value="cement">Cement</option>
+                      <option value="turf">Turf</option>
+                    </select>
+                  </div>
+                </div>
+              )}
+
+              {sport === "football" && (
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block font-semibold mb-2">Match Type</label>
+                    <select value={form.footballMatchType} onChange={set("footballMatchType")} className={inputStyle}>
+                      <option value="">Select</option>
+                      <option value="5v5">5v5</option>
+                      <option value="7v7">7v7</option>
+                      <option value="11v11">11v11</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block font-semibold mb-2">Surface</label>
+                    <select value={form.surfaceType} onChange={set("surfaceType")} className={inputStyle}>
+                      <option value="">Select</option>
+                      <option value="turf">Turf</option>
+                      <option value="grass">Grass</option>
+                    </select>
+                  </div>
+                </div>
+              )}
+
+              {sport === "volleyball" && (
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block font-semibold mb-2">Sets</label>
+                    <select value={form.volleyballMatchType} onChange={set("volleyballMatchType")} className={inputStyle}>
+                      <option value="">Select</option>
+                      <option value="3_sets">3 Sets</option>
+                      <option value="5_sets">5 Sets</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block font-semibold mb-2">Court Type</label>
+                    <select value={form.courtType} onChange={set("courtType")} className={inputStyle}>
+                      <option value="">Select</option>
+                      <option value="indoor">Indoor</option>
+                      <option value="outdoor">Outdoor</option>
+                    </select>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+
+          <button type="submit" className="w-full py-3 rounded-xl font-semibold bg-brand-gradient text-gray-950">
+            Create Event
+          </button>
+
+        </form>
+      </section>
+    </div>
+  );
+}

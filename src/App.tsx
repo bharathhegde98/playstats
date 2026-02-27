@@ -16,7 +16,7 @@ import SportGuide from "./pages/sport/SportGuide";
 import Login from "./pages/app/Login";
 import Signup from "./pages/app/Signup";
 import SportSelect from "./pages/app/SportSelect";
-import AppLayout from "./pages/app/AppLayout";
+import AppLayout from "./layouts/AppLayout";
 import Dashboard from "./pages/app/Dashboard";
 import CreateTournament from "./pages/app/CreateTournament";
 import Profile from "./pages/app/Profile";
