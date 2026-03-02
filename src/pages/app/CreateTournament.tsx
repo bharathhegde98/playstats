@@ -1,10 +1,22 @@
 import { useState } from "react";
-import { useSport } from "../../contexts/SportContext";
 import { tournamentsApi } from "../../lib/api";
+import { useParams } from "react-router-dom";
+import type { Sport } from "../../lib/api";
+import { Navigate } from "react-router-dom";
 
 export default function CreateEvent() {
-  const { selectedSport } = useSport();
-  const sport = selectedSport!;
+  const { sportType } = useParams<{ sportType?: string }>();
+
+  const validSports: Sport[] = ["cricket", "badminton", "volleyball"];
+
+  const isValidSport = (value: unknown): value is Sport =>
+    typeof value === "string" && validSports.includes(value as Sport);
+
+  if (!isValidSport(sportType)) {
+    return <Navigate to="/app/dashboard" replace />;
+  }
+
+  const sport: Sport = sportType;
 
   const [form, setForm] = useState({
     eventType: "",
@@ -29,8 +41,9 @@ export default function CreateEvent() {
     cricketType: "",
     cricketMatchType: "",
     pitchType: "",
-    footballMatchType: "",
-    surfaceType: "",
+    badmintonMatchCategory: "",
+    scoringFormat: "",
+    bestOf: "",
     volleyballMatchType: "",
     courtType: "",
 
@@ -53,19 +66,31 @@ export default function CreateEvent() {
     const result = await res.json();
     setForm(f => ({ ...f, [field]: result.url }));
   };
+const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    await tournamentsApi.create({ ...form, sportType: sport });
-    alert("Created successfully");
-  };
+  await tournamentsApi.create({
+    name: form.name,
+    sportType: sport,
+    maxTeams: form.maxTeamsAllowed,
+    minPlayersPerTeam: form.minPlayersPerTeam,
+    maxPlayersPerTeam: form.maxPlayersPerTeam,
+    startDate: form.startDate,
+    endDate: form.endDate || undefined,
+    venue: form.venueName,
+    city: form.venueLocation,
+    allowPublicJoin: true,
+  });
+
+  alert("Created successfully");
+};
 
   return (
     <div className="min-h-screen section-base flex items-center justify-center px-5">
       <section className="w-full max-w-2xl section-elevated rounded-2xl p-8 shadow">
 
         <h1 className="text-xl font-semibold text-center mb-6">
-          Create {sport.toUpperCase()} Event
+          Create {sport} Event
         </h1>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -176,35 +201,67 @@ export default function CreateEvent() {
                     </div>
                 )}
 
-                {sport === "football" && (
-                    <div className="grid grid-cols-2 gap-4">
+                {sport === "badminton" && (
+                <div className="grid grid-cols-2 gap-4">
+                    
+                    {/* Match Category */}
                     <div>
-                        <label className="block font-semibold mb-2">Match Type</label>
-                        <select
-                        value={form.footballMatchType}
-                        onChange={set("footballMatchType")}
+                    <label className="block font-semibold mb-2">Match Category</label>
+                    <select 
+                        value={form.badmintonMatchCategory} 
+                        onChange={set("badmintonMatchCategory")} 
                         className={inputStyle}
-                        >
+                    >
                         <option value="">Select</option>
-                        <option value="5v5">5v5</option>
-                        <option value="7v7">7v7</option>
-                        <option value="11v11">11v11</option>
-                        </select>
+                        <option value="singles">Singles</option>
+                        <option value="doubles">Doubles</option>
+                        <option value="mixed-doubles">Mixed Doubles</option>
+                    </select>
                     </div>
 
+                    {/* Court Type */}
                     <div>
-                        <label className="block font-semibold mb-2">Surface</label>
-                        <select
-                        value={form.surfaceType}
-                        onChange={set("surfaceType")}
+                    <label className="block font-semibold mb-2">Court Type</label>
+                    <select 
+                        value={form.courtType} 
+                        onChange={set("courtType")} 
                         className={inputStyle}
-                        >
+                    >
                         <option value="">Select</option>
-                        <option value="turf">Turf</option>
-                        <option value="grass">Grass</option>
-                        </select>
+                        <option value="indoor">Indoor</option>
+                        <option value="outdoor">Outdoor</option>
+                    </select>
                     </div>
+
+                    {/* Scoring Format */}
+                    <div>
+                    <label className="block font-semibold mb-2">Scoring Format</label>
+                    <select 
+                        value={form.scoringFormat} 
+                        onChange={set("scoringFormat")} 
+                        className={inputStyle}
+                    >
+                        <option value="">Select</option>
+                        <option value="21">21 Points</option>
+                        <option value="15">15 Points</option>
+                    </select>
                     </div>
+
+                    {/* Best Of */}
+                    <div>
+                    <label className="block font-semibold mb-2">Best Of</label>
+                    <select 
+                        value={form.bestOf} 
+                        onChange={set("bestOf")} 
+                        className={inputStyle}
+                    >
+                        <option value="">Select</option>
+                        <option value="3">3 Sets</option>
+                        <option value="5">5 Sets</option>
+                    </select>
+                    </div>
+
+                </div>
                 )}
 
                 {sport === "volleyball" && (
@@ -389,25 +446,63 @@ export default function CreateEvent() {
                 </div>
               )}
 
-              {sport === "football" && (
+              {sport === "badminton" && (
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-semibold mb-2">Match Type</label>
-                    <select value={form.footballMatchType} onChange={set("footballMatchType")} className={inputStyle}>
-                      <option value="">Select</option>
-                      <option value="5v5">5v5</option>
-                      <option value="7v7">7v7</option>
-                      <option value="11v11">11v11</option>
+                    <label className="block font-semibold mb-2">Match Category</label>
+                    <select 
+                        value={form.badmintonMatchCategory} 
+                        onChange={set("badmintonMatchCategory")} 
+                        className={inputStyle}
+                    >
+                        <option value="">Select</option>
+                        <option value="singles">Singles</option>
+                        <option value="doubles">Doubles</option>
+                        <option value="mixed-doubles">Mixed Doubles</option>
                     </select>
-                  </div>
-                  <div>
-                    <label className="block font-semibold mb-2">Surface</label>
-                    <select value={form.surfaceType} onChange={set("surfaceType")} className={inputStyle}>
-                      <option value="">Select</option>
-                      <option value="turf">Turf</option>
-                      <option value="grass">Grass</option>
+                    </div>
+
+                    {/* Court Type */}
+                    <div>
+                    <label className="block font-semibold mb-2">Court Type</label>
+                    <select 
+                        value={form.courtType} 
+                        onChange={set("courtType")} 
+                        className={inputStyle}
+                    >
+                        <option value="">Select</option>
+                        <option value="indoor">Indoor</option>
+                        <option value="outdoor">Outdoor</option>
                     </select>
-                  </div>
+                    </div>
+
+                    {/* Scoring Format */}
+                    <div>
+                    <label className="block font-semibold mb-2">Scoring Format</label>
+                    <select 
+                        value={form.scoringFormat} 
+                        onChange={set("scoringFormat")} 
+                        className={inputStyle}
+                    >
+                        <option value="">Select</option>
+                        <option value="21">21 Points</option>
+                        <option value="15">15 Points</option>
+                    </select>
+                    </div>
+
+                    {/* Best Of */}
+                    <div>
+                    <label className="block font-semibold mb-2">Best Of</label>
+                    <select 
+                        value={form.bestOf} 
+                        onChange={set("bestOf")} 
+                        className={inputStyle}
+                    >
+                        <option value="">Select</option>
+                        <option value="3">3 Sets</option>
+                        <option value="5">5 Sets</option>
+                    </select>
+                    </div>
                 </div>
               )}
 

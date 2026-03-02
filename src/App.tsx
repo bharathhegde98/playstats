@@ -15,7 +15,6 @@ import SportGuide from "./pages/sport/SportGuide";
 // App pages
 import Login from "./pages/app/Login";
 import Signup from "./pages/app/Signup";
-import SportSelect from "./pages/app/SportSelect";
 import AppLayout from "./layouts/AppLayout";
 import Dashboard from "./pages/app/Dashboard";
 import CreateTournament from "./pages/app/CreateTournament";
@@ -34,14 +33,6 @@ function PrivateRoute({ children }: ProtectedProps) {
 	return <>{children}</>;
 }
 
-function SportRoute({ children }: ProtectedProps) {
-	const { isAuthenticated, isLoading } = useAuth();
-	const { selectedSport } = useSport();
-	if (isLoading) return <div className="min-h-screen bg-gray-950" />;
-	if (!isAuthenticated) return <Navigate to="/login" replace />;
-	if (!selectedSport) return <Navigate to="/select-sport" replace />;
-	return <>{children}</>;
-}
 
 /* ---------------- Routes ---------------- */
 
@@ -64,18 +55,11 @@ function AppRoutes() {
 			<Route path="/login" element={<Login />} />
 			<Route path="/signup" element={<Signup />} />
 
-			{/* Sport Selection */}
-			<Route path="/select-sport" element={
-				<PrivateRoute>
-					<SportSelect />
-				</PrivateRoute>
-			}/>
-
 			{/* Main App (Protected + Sport Selected) */}
 			<Route path="/app" element={
-				<SportRoute>
+				<PrivateRoute>
 					<AppLayout />
-				</SportRoute>
+				</PrivateRoute>
 			}>
 				<Route index element={<Navigate to="/app/dashboard" replace />} />
 				<Route path="dashboard" element={<Dashboard />} />

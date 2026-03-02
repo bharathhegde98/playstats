@@ -22,7 +22,7 @@ export default function JoinTournament() {
 
   const SPORT_EMOJI: Record<string, string> = {
     cricket: '🏏',
-    football: '⚽',
+    badminton: "🏸",
     volleyball: '🏐',
   };
 

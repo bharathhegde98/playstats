@@ -46,33 +46,42 @@ export default function MatchCard({ match }: { match: Match }) {
             );
         }
 
-        /* ---------- FOOTBALL ---------- */
-        if (match.sport === "football") {
-            return (
-                <div className="mt-5 text-center">
-                    <div className="flex justify-between items-center">
-                        <span className="font-semibold">
-                            {match.teamA.name}
-                        </span>
+        /* ---------- BADMINTON ---------- */
+if (match.sport === "badminton") {
+    return (
+        <div className="mt-5 text-center">
 
-                        <span className="text-2xl font-bold">
-                            {match.teamA.goals ?? "-"} - {match.teamB.goals ?? "-"}
-                        </span>
+            {/* Player Names */}
+            <div className="flex justify-between items-center">
+                <span className="font-semibold">
+                    {match.teamA.name}
+                </span>
 
-                        <span className="font-semibold">
-                            {match.teamB.name}
-                        </span>
-                    </div>
+                <span className="text-xl font-bold">
+                    {match.teamA.setsWon ?? 0} - {match.teamB.setsWon ?? 0}
+                </span>
 
-                    {isLive && (
-                        <p className="text-red-500 text-sm mt-2">
-                            {match.matchMinute} {match.extraTime ?? ""}
-                        </p>
-                    )}
-                </div>
-            );
-        }
+                <span className="font-semibold">
+                    {match.teamB.name}
+                </span>
+            </div>
 
+            {/* Live Points */}
+            {isLive && (
+                <p className="text-red-500 text-sm mt-2">
+                    Current Set: {match.teamA.currentSetScore ?? 0} - {match.teamB.currentSetScore ?? 0}
+                </p>
+            )}
+
+            {/* Finished Result */}
+            {isFinished && match.result && (
+                <p className="text-green-600 text-sm mt-2">
+                    {match.result.winner} won by {match.result.winBy}
+                </p>
+            )}
+        </div>
+    );
+}
         /* ---------- VOLLEYBALL ---------- */
         if (match.sport === "volleyball") {
             return (

@@ -11,9 +11,9 @@ const SPORTS: { id: Sport; label: string; emoji: string; desc: string; color: st
     color: 'from-amber-500/20 to-orange-500/10 border-amber-500/30',
   },
   {
-    id: 'football',
-    label: 'Football',
-    emoji: '⚽',
+    id: 'badminton',
+    label: 'Badminton',
+    emoji: '🏸',
     desc: 'Leagues, cups & real-time updates',
     color: 'from-emerald-500/20 to-green-500/10 border-emerald-500/30',
   },

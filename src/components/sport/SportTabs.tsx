@@ -26,7 +26,7 @@ export default function SportTabs() {
     const validSports: SportType[] = [
         "cricket",
         "volleyball",
-        "football",
+        "badminton",
     ];
 
     if (!sportName || !validSports.includes(sportName)) {

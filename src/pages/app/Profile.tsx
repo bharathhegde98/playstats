@@ -5,7 +5,7 @@ import type { Sport } from '../../lib/api';
 
 const SPORT_META: Record<Sport, { emoji: string; label: string }> = {
   cricket: { emoji: '🏏', label: 'Cricket' },
-  football: { emoji: '⚽', label: 'Football' },
+  badminton: { emoji: '🏸', label: 'Badminton' },
   volleyball: { emoji: '🏐', label: 'Volleyball' },
 };
 

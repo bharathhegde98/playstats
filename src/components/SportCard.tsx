@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import useRevealOnScroll from "../hooks/useRevealOnScroll";
 import { useAuth } from "../contexts/AuthContext";
 import { useSport } from "../contexts/SportContext";
@@ -14,14 +14,13 @@ export default function SportCard({ name, image, sportId }: SportCardProps) {
     const { ref, visible } = useRevealOnScroll();
     const { isAuthenticated } = useAuth();
     const { setSport } = useSport();
-    const navigate = useNavigate();
 
-    const destination = isAuthenticated ? "/app/dashboard" : "/login";
+    const destination = isAuthenticated ? `/${sportId}` : "/login";
 
     const handleClick = () => {
-        if (isAuthenticated) {
-            setSport(sportId);
-        } else {
+        setSport(sportId);
+
+        if (!isAuthenticated) {
             localStorage.setItem("ps_intended_sport", sportId);
         }
     };
@@ -47,7 +46,7 @@ export default function SportCard({ name, image, sportId }: SportCardProps) {
                     {name}
                 </h3>
                 <span className="inline-flex items-center gap-1 text-sm text-white/80 border border-white/30 rounded-full px-4 py-1.5 transition-all duration-300 group-hover:border-white group-hover:text-white">
-                    {isAuthenticated ? "Go to Dashboard" : "Get Started"}
+                    Get Started
                     <span className="transition-transform duration-300 group-hover:translate-x-1">
                         →
                     </span>

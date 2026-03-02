@@ -2,7 +2,7 @@ export type MatchStatus = "live" | "upcoming" | "finished";
 
 export type MatchType = "tournament" | "individual";
 
-export type SportType = "cricket" | "volleyball" | "football";
+export type SportType = "cricket" | "volleyball" | "badminton";
 
 export type Match = {
   id: number;
@@ -38,7 +38,7 @@ export type Match = {
   teamA: {
     name: string;
 
-    /* Football */
+    /* Badminton */
     goals?: number;
 
     /* Cricket */
@@ -64,7 +64,7 @@ export type Match = {
     currentSetScore?: number;
   };
 
-  /* Football Specific */
+  /* Badminton Specific */
   matchMinute?: string | null;
   extraTime?: string | null;
 

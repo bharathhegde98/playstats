@@ -4,13 +4,13 @@ import { tournamentsApi, type Tournament, type Sport } from '../../lib/api';
 
 const SPORT_META: Record<Sport, { emoji: string; label: string }> = {
   cricket: { emoji: '🏏', label: 'Cricket' },
-  football: { emoji: '⚽', label: 'Football' },
+  badminton: { emoji: '🏸', label: 'Badminton' },
   volleyball: { emoji: '🏐', label: 'Volleyball' },
 };
 
 const DEFAULTS: Record<Sport, { min: number; max: number }> = {
   cricket: { min: 11, max: 15 },
-  football: { min: 11, max: 18 },
+  badminton: { min: 2, max: 5 },
   volleyball: { min: 6, max: 12 },
 };
 

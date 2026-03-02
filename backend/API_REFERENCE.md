@@ -334,7 +334,7 @@ List tournaments with optional filtering and pagination.
 
 | Param | Type | Required | Values | Default |
 |-------|------|:--------:|--------|---------|
-| `sport` | string | No | `cricket`, `football`, `volleyball` | — (all sports) |
+| `sport` | string | No | `cricket`, `badminton`, `volleyball` | — (all sports) |
 | `status` | string | No | `draft`, `open`, `ongoing`, `completed`, `cancelled` | — (all statuses) |
 | `page` | integer | No | ≥ 1 | `1` |
 | `limit` | integer | No | 1–50 | `20` |

@@ -6,7 +6,7 @@ import type { SportType } from "../../types/match";
 /* Headline text */
 const headlines: Record<SportType, string> = {
 	cricket: "Every innings tells a story. Make yours unforgettable.",
-	football: "Where passion meets the pitch and legends are born.",
+	badminton: "Precision in every rally. Power in every point.",
 	volleyball: "Rise. Spike. Win. The game starts here.",
 };
 

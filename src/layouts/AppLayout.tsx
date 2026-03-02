@@ -1,27 +1,27 @@
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import Sidebar from "../components/dashboard/Sidebar";
 import Header from "../components/dashboard/Header";
-import SideDrawer from "../components/dashboard/SideDrawer";
 
 export default function AppLayout() {
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="h-screen bg-gray-900 overflow-hidden">
 
-      {/* HEADER */}
-      <Header onMenuClick={() => setDrawerOpen(true)} />
+      {/* Sidebar */}
+      <Sidebar open={sidebarOpen} />
 
-      {/* SIDE DRAWER */}
-      <SideDrawer
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-      />
+      {/* Main Area (moves right when sidebar opens) */}
+      <div
+        className={`flex flex-col h-full transition-all duration-300 
+        ${sidebarOpen ? "ml-72" : "ml-0"}`}
+      >
+        <Header onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
 
-      {/* PAGE CONTENT */}
-      <main className="pt-16 pb-24 px-5">
-        <Outlet />
-      </main>
+        <main className="flex-1 mt-16 p-6 overflow-y-auto">
+          {/* Dashboard content here */}
+        </main>
+      </div>
     </div>
   );
 }

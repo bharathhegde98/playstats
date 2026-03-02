@@ -5,7 +5,7 @@ import { tournamentsApi, type Tournament, type Sport } from '../../lib/api';
 
 const SPORT_META: Record<Sport, { emoji: string; label: string }> = {
   cricket: { emoji: '🏏', label: 'Cricket' },
-  football: { emoji: '⚽', label: 'Football' },
+  badminton: { emoji: '🏸', label: 'Badminton' },
   volleyball: { emoji: '🏐', label: 'Volleyball' },
 };
 
@@ -73,7 +73,7 @@ export default function Dashboard() {
   const sport = selectedSport!;
   const meta = SPORT_META[sport];
 
-  const SPORTS: Sport[] = ['cricket', 'football', 'volleyball'];
+  const SPORTS: Sport[] = ['cricket', 'badminton', 'volleyball'];
 
   useEffect(() => {
     setLoading(true);
